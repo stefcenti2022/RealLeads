@@ -1,3 +1,5 @@
 # RealLeads
 
-Making a change to the readme to test pull from colab/git
+## Architecture
+
+<img src="./Resources/architecture.png" alt="RealLeads Architecture Diagram" width="500"/>
