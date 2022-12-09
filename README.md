@@ -1,6 +1,5 @@
 # RealLeads
 
-
 ## Overview
 
 The mobility in the real estate sector has a significant impact on the American economy. There are several indicators that effect real estate sales such as location, property characteristics, days on the market, mortgage type, previous transactions etc. These indicators help us the determine current approximate value of the property.
@@ -20,8 +19,6 @@ We will be using:
 * Multi Listing Service Data 
 * Public Record 
 * Mortgage Data to perform our analysis. 
-
-
 
 ## Architecture
 
@@ -45,9 +42,10 @@ We will be using:
 * Square: 
 * Triangle: 
 * Circle: 
-X:
+* X:
 
 ## Site Map
+
 <img src="./Resources/site_map.png" alt="Site Map Diagram" width="500"/>
 
 ## Home Page Example
