@@ -24,6 +24,7 @@ We will be using:
 
 <img src="./Resources/architecture.png" alt="RealLeads Architecture Diagram" width="500"/>
 
+<<<<<<< HEAD
 ## Software Used
 
 ## Machine Learning Model
@@ -44,6 +45,8 @@ We will be using:
 * Circle: 
 * X:
 
+=======
+>>>>>>> Stef
 ## Site Map
 
 <img src="./Resources/site_map.png" alt="Site Map Diagram" width="500"/>
