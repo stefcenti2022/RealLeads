@@ -44,6 +44,10 @@ We will be using:
 * Circle: 
 * X:
 
+#Presentation
+https://www.canva.com/design/DAFT70_iCEI/dEdaMSujGwRQv8tqX6JlCQ/view?utm_content=DAFT70_iCEI&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
+
+
 ## Site Map
 
 <img src="./Resources/site_map.png" alt="Site Map Diagram" width="500"/>
@@ -51,3 +55,4 @@ We will be using:
 ## Home Page Example
 
 <img src="./Resources/home_page_example.png" alt="Sample Home Page" width="500"/>
+
