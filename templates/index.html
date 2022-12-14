@@ -1,3 +1,16 @@
+<!---------------------------------------------------------------------
+* 
+* Name: index.html
+*
+* Description: 
+* This page is contains the index to all other pages for the RealLeads
+* Flask application.
+*
+* When a new template is rendered, the body of the index below the
+* section with the buttons for testing each route will replace what
+* is currently rendered in this section of the index page.
+*
+----------------------------------------------------------------------->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,23 +33,76 @@
     <!-- d3 JavaScript -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <!-- Our CSS -->
-    <link rel="stylesheet" type="text/css" href="templates/style.css" />
-    
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
   </head>
   <body>
     <div class="container">
       <!-- Add Jumbotron to Header -->
       <div class="jumbotron">
-        <h1>Real Leads</h1>
+        <!-- Heading is not needed because the graphic is the heading. -->
 
         <img
-          src="Resources/images/home_page_header.png"
+          src="/static/images/home_page_header.png"
           class="jumbotron-image"
           alt="Header Background"
         />
       </div>
     </div>
-    <p><button class=“btn btn-primary btn-lg btn3d” href=“/get_map” role=“button”>Map View</button></p>
-  </body>
 
+    <h4>Buttons for Testing Flask Routes</h4>
+    <a
+      class="btn btn-primary btn-lg btn3d"
+      href="{{ url_for('index') }}"
+      role="button"
+    >
+      Index
+    </a>
+    <a
+      class="btn btn-primary btn-lg btn3d"
+      href="{{ url_for('home') }}"
+      role="button"
+    >
+      Home
+    </a>
+
+    <a
+      class="btn btn-primary btn-lg btn3d"
+      href="{{ url_for('about') }}"
+      role="button"
+    >
+      About
+    </a>
+
+    <a
+      class="btn btn-primary btn-lg btn3d"
+      href="{{ url_for('census_map') }}"
+      role="button"
+    >
+      Map Box
+    </a>
+
+    <a
+      class="btn btn-primary btn-lg btn3d"
+      href="{{ url_for('tableau_story', story_id = 1) }}"
+      role="button"
+    >
+      First Tableau Story (Embeded)
+    </a>
+
+    <a
+      class="btn btn-primary btn-lg btn3d"
+      href="https://public.tableau.com/views/BikeSharingAnalysis_16678076895740/NYCBikeTour?:language=en-US&:display_count=n&:origin=viz_share_link')"
+      target="_blank"
+      role="button"
+    >
+      Second Tableau Story (Link)
+    </a>
+
+    {% block body %}
+
+    <p>This is the RealLeads index page.</p>
+
+    {% endblock %}
+  </body>
+  {% include 'footer.html' %}
 </html>

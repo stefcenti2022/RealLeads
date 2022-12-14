@@ -1,0 +1,20 @@
+<!---------------------------------------------------------------------
+* 
+* Name: home.html
+*
+* Description: 
+* This page currently demonstrates how the body on the index page gets
+* replaced with the code in this file to render the template of the
+* RealLeads home page.
+*
+----------------------------------------------------------------------->
+{% extends 'index.html' %} {% block body %}
+
+<p>This is the RealLeads home page</p>
+<p>Using 'extends' on this page will 'replace' everything in the block body.</p>
+<p>
+  Using 'include' on this page will 'append' everything in the block body to the
+  code in index.html.
+</p>
+
+{% endblock %}
