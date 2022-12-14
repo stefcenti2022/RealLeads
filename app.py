@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, url_for
 #from flask_pymongo import PyMongo
-import census_map
+import get_map
 
 app = Flask(__name__)
 
@@ -14,7 +14,7 @@ def index():
    return render_template("index.html")
 
 @app.route("/get_map")
-def census_map():
+def get_map():
    # mars = mongo.db.mars
     #mars_data = scraping.scrape_all()
     #mars.update_one({}, {"$set":mars_data}, upsert=True)
