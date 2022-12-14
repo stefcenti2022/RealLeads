@@ -1,0 +1,20 @@
+<!---------------------------------------------------------------------
+* 
+* Name: census_map.html
+*
+* Description:
+* This page will contain a rendering of the map used for showing
+* real estate that may be a source of a potential lead.
+*
+* It uses mapbox API and Streets layers to allow the user to show
+* different layers on the same map to zero in to certain neighborhoods
+* they want to explore.
+* 
+----------------------------------------------------------------------->
+{% extends 'index.html' %} {% block body %}
+<ul>
+  {% for town in towns %}
+  <li>{{ town }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
