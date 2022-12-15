@@ -1,0 +1,29 @@
+<style>
+      
+      /*** Jumbotron background styling ***/
+
+      .jumbotron {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 500px;
+      }
+
+      .jumbotron-image {
+        background: linear-gradient(
+          rgba(0, 0, 250, 0.25),
+          rgba(125, 250, 250, 0.45)
+        );
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .jumbotron-content {
+        color: white;
+        position: relative;
+      }
+    </style>
