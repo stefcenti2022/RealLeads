@@ -71,6 +71,29 @@ https://www.canva.com/design/DAFT70_iCEI/dEdaMSujGwRQv8tqX6JlCQ/view?utm_content
 * Circle: 
 * X:
 
+## Software Used
+
+## Machine Learning Model
+
+### Supervised
+* How much can I sell my home for?
+
+### Unsupervised
+* How fast can my house be sold?
+
+
+## Results
+
+## Presentation
+
+https://www.canva.com/design/DAFT70_iCEI/dEdaMSujGwRQv8tqX6JlCQ/view?utm_content=DAFT70_iCEI&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
+
+## Team Members
+* Square: 
+* Triangle: 
+* Circle: 
+* X:
+
 ## Site Map
 
 <img src="./Resources/images/site_map.png" alt="Site Map Diagram" width="500"/>
