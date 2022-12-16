@@ -2,7 +2,7 @@
 
 ## Overview
 
-The real estate industry has a significant impact on the American economy. There are several indicators that affect real estate sales such as location, property characteristics and the economy including the job market, Ekonomik cycle and interest rates etc. These indicators help us the determine current approximate value of the property.
+The real estate industry has a significant impact on the American economy. There are several indicators that affect real estate sales such as location, property characteristics and the economy including the job market, economic cycle and interest rates etc. These indicators help us the determine current approximate value of the property.
 
 ## Goal
 
