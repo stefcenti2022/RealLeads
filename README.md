@@ -8,8 +8,8 @@ The real estate industry has a significant impact on the American economy. There
 
 Whether you are a buyer, seller, agent or investor, everyone has two big questions:
 
-* How much can I sell my home for?
-* How fast can my house be sold?
+- How much can I sell my home for?
+- How fast can my house be sold?
 
 In this project we will try to find answers for these questions using the data set below from 2019-2022 in New Castle, DE.
 
@@ -17,11 +17,11 @@ In this project we will try to find answers for these questions using the data s
 
 We will be using:
 
-* Multi Listing Service Data (MLS)
-* Public Record (PD)
-* Mortgage Data (MD)
-* Census Data (CD)
-* APIs
+- Multi Listing Service Data (MLS)
+- Public Record (PD)
+- Mortgage Data (MD)
+- Census Data (CD)
+- APIs
 
 ## Architecture
 
@@ -51,11 +51,10 @@ We will be using:
 
 https://www.canva.com/design/DAFT70_iCEI/dEdaMSujGwRQv8tqX6JlCQ/view?utm_content=DAFT70_iCEI&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
 
-
 ## Site Map
 
 <img src="./Resources/images/site_map.png" alt="Site Map Diagram" width="500"/>
 
 ## Home Page Example
 
-<img src="/Users/stefcenti/DataBootcamp/Analysis_Projects/RealLeads/Resources/images/home_page_example.png" alt="Sample Home Page" width="500"/>
+<img src="/Users/stefcenti/DataBootcamp/Analysis_Projects/RealLeads/static/images/home_page_example.png" alt="Sample Home Page" width="500"/>
