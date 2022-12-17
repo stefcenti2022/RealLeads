@@ -25,7 +25,7 @@ We will be using:
 
 ## Architecture
 
-<img src="./Resources/images/architecture.png" alt="RealLeads Architecture Diagram" width="500"/>
+<img src="./static/images/architecture.png" alt="RealLeads Architecture Diagram" width="500"/>
 
 ## Software Used
 
@@ -53,8 +53,8 @@ https://www.canva.com/design/DAFT70_iCEI/dEdaMSujGwRQv8tqX6JlCQ/view?utm_content
 
 ## Site Map
 
-<img src="./Resources/images/site_map.png" alt="Site Map Diagram" width="500"/>
+<img src="./static/images/site_map.png" alt="Site Map Diagram" width="500"/>
 
 ## Home Page Example
 
-<img src="/Users/stefcenti/DataBootcamp/Analysis_Projects/RealLeads/static/images/home_page_example.png" alt="Sample Home Page" width="500"/>
+<img src="./static/images/home_page_example.png" alt="Sample Home Page" width="500"/>
