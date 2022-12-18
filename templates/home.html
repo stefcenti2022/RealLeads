@@ -3,18 +3,127 @@
 * Name: home.html
 *
 * Description: 
-* This page currently demonstrates how the body on the index page gets
-* replaced with the code in this file to render the template of the
-* RealLeads home page.
+* This page is a TEST dashboard for all other pages in the RealLeads
+* Flask application.
+*
+* Purpose: 
+* It's purpose is to allow developers to add a new routes to and
+* new html pages for testing flask routing with different types of data 
+* instead of adding unnecessary funtionality to the main application. 
+*
+* To a New Route:
+* - Add a new button to test the new route below.
+* - Create a new <route_name>.html file in the templates folder.
+* - Add code to the new template that will be rendered using flask.
+* - In app.py add the new route and code to render the new template.
+*
+* NOTE: The body of the home page is below the buttons used for testing.
+* When a test button is clicked, flask will go to the route and render
+* the new template in the body section of the home page below the buttons.
 *
 ----------------------------------------------------------------------->
-{% extends 'index.html' %} {% block body %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RealLeads</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
 
-<p>This is the RealLeads home page</p>
-<p>Using 'extends' on this page will 'replace' everything in the block body.</p>
-<p>
-  Using 'include' on this page will 'append' everything in the block body to the
-  code in index.html.
-</p>
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+    <!-- d3 JavaScript -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Add Jumbotron to Header -->
+      <div class="jumbotron">
+        <!-- Heading is not needed because the graphic is the heading. -->
 
-{% endblock %}
+        <img
+          src="/static/images/home_page_header.png"
+          class="jumbotron-image"
+          alt="Header Background"
+        />
+      </div>
+    </div>
+
+    <h4>Buttons for Testing Flask Routes</h4>
+    <a
+      class="btn btn-primary btn-lg btn3d"
+      href="{{ url_for('home') }}"
+      role="button"
+    >
+      Home
+    </a>
+    <a
+      class="btn btn-primary btn-lg btn3d"
+      href="{{ url_for('extends_test') }}"
+      role="button"
+    >
+      Extends Test
+    </a>
+
+    <a
+      class="btn btn-primary btn-lg btn3d"
+      href="{{ url_for('list_test') }}"
+      role="button"
+    >
+      List Test
+    </a>
+
+    <a
+      class="btn btn-primary btn-lg btn3d"
+      href="{{ url_for('tableau_test', story_id = 1) }}"
+      role="button"
+    >
+      Embeded Tableau Story Test
+    </a>
+
+    <a
+      class="btn btn-primary btn-lg btn3d"
+      href="https://public.tableau.com/views/BikeSharingAnalysis_16678076895740/NYCBikeTour?:language=en-US&:display_count=n&:origin=viz_share_link')"
+      target="_blank"
+      role="button"
+    >
+      Link Tableau Story Test
+    </a>
+
+    <a
+      class="btn btn-primary btn-lg btn3d"
+      href="{{ url_for('script_test') }}"
+      role="button"
+    >
+      Script Test
+    </a>
+
+    <a
+      class="btn btn-primary btn-lg btn3d"
+      href="{{ url_for('mapbox_test') }}"
+      role="button"
+    >
+      Mapbox Test
+    </a>
+
+    {% block body %}
+
+    <h4>This is the RealLeads Home page.</h4>
+    <!-- This is the div that holds our map -->
+    <div id="mapid"></div>
+
+    {% endblock %}
+  </body>
+  {% include 'footer.html' %}
+</html>
