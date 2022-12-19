@@ -1,0 +1,77 @@
+<!---------------------------------------------------------------------
+* 
+* Name: tableau_test.html
+*
+* Description: 
+* This page currently demonstrates how to embed a tableau story into a
+* web page.  Alternatively, we can just create a link to the story using
+* the button/a tag href.
+*
+* Usage:
+* Each story will have its own button or link for the user to see view
+* them one at a time.
+*
+* The first story file will use route 1.  Any additional stories
+* will use the next available id and this file will need to be
+* modified to handle a new elseif condition that will check the id of 
+* the new route.
+*
+* To Embed the html to the new story or notebook, go to Tableau, click
+* click the share icon and copy the "Embed Code" link and add the code
+* and the new else condition below.  
+*
+* Alternatively, copy the Link and add it as the href in the button/tag
+* in index.html to be accessed directly. Doing so, will redirect the user 
+* to the Tableau public website.
+*
+----------------------------------------------------------------------->
+{% extends 'home.html' %} {% block body %} {% if story_id == "1" %}
+
+<div
+  class="tableauPlaceholder"
+  id="viz1670780570014"
+  style="position: relative"
+>
+  <noscript
+    ><a href="#"
+      ><img
+        alt=" "
+        src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bi&#47;BikeSharingAnalysis_16678076895740&#47;NYCBikeTour&#47;1_rss.png"
+        style="border: none" /></a></noscript
+  ><object class="tableauViz" style="display: none">
+    <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+    <param name="embed_code_version" value="3" />
+    <param name="site_root" value="" />
+    <param
+      name="name"
+      value="BikeSharingAnalysis_16678076895740&#47;NYCBikeTour"
+    />
+    <param name="tabs" value="yes" />
+    <param name="toolbar" value="yes" />
+    <param
+      name="static_image"
+      value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bi&#47;BikeSharingAnalysis_16678076895740&#47;NYCBikeTour&#47;1.png"
+    />
+    <param name="animate_transition" value="yes" />
+    <param name="display_static_image" value="yes" />
+    <param name="display_spinner" value="yes" />
+    <param name="display_overlay" value="yes" />
+    <param name="display_count" value="yes" />
+    <param name="language" value="en-US" />
+  </object>
+</div>
+<script type="text/javascript">
+  var divElement = document.getElementById('viz1670780570014');
+  var vizElement = divElement.getElementsByTagName('object')[0];
+  vizElement.style.width = '1016px';
+  vizElement.style.height = '1014px';
+  var scriptElement = document.createElement('script');
+  scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+  vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+
+{% else %}
+
+<p>No Story Available at Route {{story_id}}</p>
+
+{% endif %} {% endblock %}

@@ -1,0 +1,31 @@
+<!-----------------------------------------------------------
+ * Name: mapbox_test.html
+ * 
+ * Description: 
+ * Test the mapbox API using javascript to display the map
+ * from the earthquake module.
+ *
+ -->
+
+{% extends 'home.html' %} {% block body %}
+<div id="mapid"></div>
+
+{# Leaflet Script #}
+<script
+  src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+  integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+  crossorigin=""
+></script>
+
+{# API Key #}
+<script type="text/javascript" src="./static/js/config.js"></script>
+
+{# Plotly to chart the graph/map #}
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+{# Our code to create the map using the Mapbox API #}
+<script type="text/javascript" src="./static/js/Challenge_logic.js">
+  var graphs = {{map | safe}};
+  Plotly.plot("mapid",graphs,{});
+</script>
+{% endblock %}
