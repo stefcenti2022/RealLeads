@@ -68,27 +68,3 @@ that helps find out what features have the strongest weight when determine the t
 
 <img src="./static/images/home_page_example.png" alt="Sample Home Page" width="500"/>
 
-- How fast can my house be sold?
-
-### Unsupervised
-
-## Results
-
-## Team Members
-
-- Square:
-- Triangle:
-- Circle:
-- X:
-
-## Presentation
-
-https://www.canva.com/design/DAFT70_iCEI/dEdaMSujGwRQv8tqX6JlCQ/view?utm_content=DAFT70_iCEI&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
-
-## Site Map
-
-<img src="./static/images/site_map.png" alt="Site Map Diagram" width="500"/>
-
-## Home Page Example
-
-<img src="./static/images/home_page_example.png" alt="Sample Home Page" width="500"/>
