@@ -1,5 +1,8 @@
-body {
+html,
+body,
+#mapid {
   height: 100%;
+  width: 100%;
   background-color: rgb(224, 204, 165);
 }
 

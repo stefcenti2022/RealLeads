@@ -32,7 +32,7 @@ def get_map():
 
     mapJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     header = "Map of North America"
-    return mapJSON, header    
+    return mapJSON, header
 
 def get_string():
     test_data = "GET MAP CALLED AND RETURNED THIS STRING"

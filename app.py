@@ -59,5 +59,11 @@ def mapbox_test():
    map, header = leads_map.get_map()
    return render_template("mapbox_test.html", map = map, header = header)
 
+@app.route("/mapbox_test_eq")
+def mapbox_test_eq():
+   # This route tests calling javascript scripts to retrive render
+   # the earthquake map from challenge_logic.js.
+   return render_template("mapbox_test_eq.html")
+    
 if __name__ == "__main__":
-    app.run()
+   app.run()

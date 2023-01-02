@@ -36,9 +36,9 @@ let outdoors = L.tileLayer(
 
 // // Create the map object with center, zoom level and default layer.
 let map = L.map('mapid', {
-  center: [40.7, -94.5],
-  zoom: 3,
-  layers: [streets],
+  center: [39.755555, -75.65555],
+  zoom: 22,
+  layers: [satelliteStreets],
 });
 
 // Create a base layer that holds all three maps.
@@ -291,3 +291,5 @@ majorEQ.addTo(map);
 
 // Add a legend to the map.
 legend.addTo(map);
+
+mapEQ = map;
