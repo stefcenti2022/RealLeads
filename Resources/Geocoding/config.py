@@ -1,3 +1,0 @@
-weather_api_key="855d777951bc51f122c111c0a03b8300"
-new_york_time_api_key="VTxX3mnXGm1WsjdIv5EhbvMaUmMzszNh"
-g_key="AIzaSyAJmXJqr1ClPquMkJQJqgHtwyyL7dp_KRA"
