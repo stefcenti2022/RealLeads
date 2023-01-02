@@ -37,10 +37,6 @@ We will be using:
 
 The first stage of the data preprocessing involves merging multiple tables to create a machine learning ready data table. Each merge tage involves further data cleaning such as column dropping and disposing any rows that have NaN value.
 
-Once the data is cleaned and have no NaN values, we begin on scaling the data using the StandardScaler() method to alleviate data that are spread out and scales it tighter.
-
-The data is split using the train_test_split method. The data is split in a 80/20 form where 80 percent of the data is being fitted to a machine learning model and the 20 percent will be use to test the machine learning model.
-
 The model that we will be using to predict list and sold price of a house is a random forest regressor model which is a regression model. This model has benefits such as retraining on random states to find the best tree to use and also has built in functions 
 that helps find out what features have the strongest weight when determine the target variable.
 
@@ -75,4 +71,3 @@ The best model at this point in the analysis is the Balanced Random Forest Class
 ## Home Page Example
 
 <img src="./static/images/home_page_example.png" alt="Sample Home Page" width="500"/>
-
