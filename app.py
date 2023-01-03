@@ -64,6 +64,12 @@ def mapbox_test_eq():
    # This route tests calling javascript scripts to retrive render
    # the earthquake map from challenge_logic.js.
    return render_template("mapbox_test_eq.html")
+
+@app.route("/example")
+def example():
+   # This route tests calling a method in a python module to retrive data
+   # to be embeded/rendered.
+   return render_template("example.html")
     
 if __name__ == "__main__":
    app.run()
