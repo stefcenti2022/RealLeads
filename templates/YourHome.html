@@ -1,0 +1,242 @@
+<!---------------------------------------------------------------------
+* 
+* Name: index.html
+*
+* Description: 
+* This page is contains the index to all other pages for the RealLeads
+* Flask application.
+*
+* When a new template is rendered, the body of the index below the
+* section with the buttons for testing each route will replace what
+* is currently rendered in this section of the index page.
+*
+----------------------------------------------------------------------->
+{% extends 'index.html' %} {% block body %}
+
+<ul>
+  {% for social in sites %}
+  <li>{{ social }}</li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    .jumbotron1 {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 125px;
+      background-color: rgb(0,78,120);
+      color:white;
+      padding-top: 10px;
+    }
+    .headerlogo {
+      width: 150px;
+      float: right;
+      padding-right: 50px;
+    }
+    .display-4 {
+      position: relative;
+      text-align: center;
+      padding-left: 150px;
+    }
+    .main {
+      padding: 1rem 0rem;
+      text-align: left;
+    }
+    .control-panel {
+      display: inline-block;
+      vertical-align: middle;
+      text-align: center;
+      position: relative;
+      padding-left: 0px;
+      width: 160px;
+      height:270px;
+      background-color:rgb(0,78,120) ;
+    }
+    .main-section{
+      display: inline-block;
+      vertical-align: middle;
+      text-align: center;
+      position: relative;
+      vertical-align: top;
+      width:auto;
+      height: auto;
+      border: 1px solid blue;    
+      background-color: #98cae8; 
+    }
+    .nav-button {
+      background-color:rgb(142,110,67);
+      border: none;
+      color: white;
+      padding: 5px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 16px;
+      width: 150px;
+    }
+    .nav-button:hover {
+      background-color:rgb(243,159,45);
+      transition: 0.4s;
+    }
+    footer {
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+    height: 100px;
+    width: 100%;
+    background-color: rgb(1, 30, 45);
+    text-align: center;
+    }
+    
+
+  </style>
+  <header>
+    <div class="jumbotron1">
+      <div class="content1">
+        <h1 class="display-4">YOUR HOME
+          <img class="headerlogo" src="/static/images/logo.png" alt="My Image"  />
+        </h1>
+        <h6 class="display-4" style="text-align:center">powered by RealLeads</h6>
+      </div>
+    </div>
+  </header>
+  
+<body>
+  <div class="main">
+      <div class="control-panel">
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('home') }}"></a>
+        Home
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('index') }}"></a>
+        Your Home
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('home') }}"></a>
+        My List Price
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('home') }}"></a>
+        My Expected Sold Price
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('home') }}"></a>
+        My Expected Days On Market
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('home') }}"></a>
+        My Agent 
+        </button>
+      </div>
+      <div class="main-section">
+        <br>
+        <h1 > This is the test box</h1>
+        <br>
+      </div>
+      
+  </div> 
+</body>
+<footer>
+    
+</footer>
+
+  
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RealLeads</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+
+
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+    <!-- d3 JavaScript -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+  </head>
+  <body>
+
+
+    <h4>Buttons for Testing Flask Routes</h4>
+    <a
+      class="btn btn-primary btn-lg btn3d"
+      href="{{ url_for('index') }}"
+      role="button"
+    >
+      Index
+    </a>
+    <a
+      class="btn btn-primary btn-lg btn3d"
+      href="{{ url_for('home') }}"
+      role="button"
+    >
+      NEW PAGE
+    </a>
+
+    <a
+      class="btn btn-primary btn-lg btn3d"
+      href="{{ url_for('about') }}"
+      role="button"
+    >
+      About
+    </a>
+
+    <a
+      class="btn btn-primary btn-lg btn3d"
+      href="{{ url_for('example') }}"
+      role="button"
+    >
+      Example
+    </a>
+
+    <a
+      class="btn btn-primary btn-lg btn3d"
+      href="{{ url_for('census_map') }}"
+      role="button"
+    >
+      Map Box
+    </a>
+
+    <a
+      class="btn btn-primary btn-lg btn3d"
+      href="{{ url_for('tableau_story', story_id = 1) }}"
+      role="button"
+    >
+      First Tableau Story (Embeded)
+    </a>
+
+    <a
+      class="btn btn-primary btn-lg btn3d"
+      href="https://public.tableau.com/views/BikeSharingAnalysis_16678076895740/NYCBikeTour?:language=en-US&:display_count=n&:origin=viz_share_link')"
+      target="_blank"
+      role="button"
+    >
+      Second Tableau Story (Link)
+    </a>
+
+    {% block body %}
+
+    <p>This is the RealLeads index page.</p>
+
+    {% endblock %}
+  </body>
+ 
+</html>
