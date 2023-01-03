@@ -56,11 +56,10 @@
       text-align: center;
       position: relative;
       float:inline-end;
-      padding: 10px;
       vertical-align: top;
       left: 5px;
-      width:75%;
-      height: auto;
+      width:200rem;
+      height: 100rem;
       border: 1px solid #163f63;    
       background-color: #98cae8; 
     }
@@ -82,71 +81,10 @@
       background-color:rgb(243,159,45);
       transition: 0.4s;
     }
-    .form{
-      padding:15px;
-      float:center;
-      background-color: #163f63;
-      color: white;
-      height: auto;
-    }
-    input, label {
-      margin: 5px 5px;
-    }
-
-    .form-group {
-      background-color: #163f63;
-      margin: 30px auto;
-      width: 450px;
-    }
-
-    .form-control {
-      float: center;
-    }
-
-    #inputStreet {
-      width: 100%;
-    }
-
-    #inputCity {
-      display: inline-block;
-      width: 55%;
-    }
-
-    #inputState {
-      display: inline-block;
-      width: 15%;
-    }
-
-    #inputZip {
-      display: inline-block;
-      width: 28%;
-    }
-
-    #inputCounty {
-      display: inline-block;
-      width: 50%;
-    }
-    #inputMLS {
-      display: inline-block;
-      width:49%;
-    }
-    .formbutton{
-      background-color: rgb(142,110,67); 
-      border: none;
-      color: white;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-
-    }
-    .formbutton:hover{
-      background-color:rgb(243,159,45);
-      transition: 0.4s;
-    }
-
-
+    .title{
+            text-align: left;
+            color: white;
+   }
     footer {
     position: absolute;
     left: 0px;
@@ -226,174 +164,7 @@
       </div>
       <div class="main-section">
         <br>
-        <div class="form">
-          <div class="form-group">
-            <h3>Input Your Address Here</h3>
-            <input type="street" 
-                   class="form-control" 
-                   id="autocomplete" 
-                   placeholder="Street">
-            
-            <input type="city" 
-                   class="form-control" 
-                   id="inputCity" 
-                   placeholder="City">
-            
-            <input type="state" 
-                   class="form-control" 
-                   id="inputState" 
-                   placeholder="State">
-            
-            <input type="zip" 
-                   class="form-control" 
-                   id="inputZip" 
-                   placeholder="Zip">
-            
-            <input type="county" 
-                   class="form-control" 
-                   id="inputCounty" 
-                   placeholder="County">
-            <input type="MLS Number"
-                   class="form-control"
-                   id="inputMLS"
-                   placeholder="MLS Number">
-            <br>
-            <button class="formbutton">
-                  Click to Receive data
-            </button>
-          </div>
-        </div>
-        <br>
-        <style>
-          dd{
-            Border: 1px solid;
-            text-align: right;
-            background-color: white;
-            width: 200px;
-          }
-          dt{
-            text-align: left;
-          }
-          .title{
-            text-align: left;
-            color: white;
-          }
-          .r_1{
-            display:inline-block;
-            vertical-align: top;
-            padding: 1rem 1rem;
-          }
-          .r_2{
-            display:inline-block;
-            vertical-align: top;
-            padding: 1rem 1rem;
-          }
-          .r_3{
-            display:inline-block;
-            vertical-align: top;
-            padding: 1rem 1rem;
-          }
-        </style>
-        <div class="results"> 
-          <div class="r_1">
-            <h3 class="title">Last Sales Data</h3>
-            <dl class="dl-horizontal">
-              <dt>Sold Price</dt>
-                <dd></dd>
-              <dt>Original Sales Price</dt>
-                <dd></dd>
-              <dt>Current Price</dt>
-                <dd></dd>
-              <dt>DOM</dt>
-                <dd></dd>
-              <dt>Settled Date</dt>
-                <dd></dd>
-            </dl>
-            <h3 class="title">Location Data</h3>
-            <dl class="dl-horizontal">
-              <dt>County</dt>
-                <dd></dd>
-              <dt>ML5 Area</dt>
-                <dd></dd>
-              <dt>Township</dt>
-                <dd></dd>
-              <dt>Subdivision</dt>
-                <dd></dd>
-              <dt>School District</dt>
-                <dd></dd>
-            </dl>
-          </div>
-          <div class="r_2">
-            <h3 class="title">Property Characteristics</h3>
-            <dl class="dl-horizontal">
-              <dt>Acres</dt>
-                <dd></dd>
-              <dt>Ownership</dt>
-                <dd></dd>
-              <dt>Senior Community Y/N</dt>
-                <dd></dd>
-              <dt>Condo/Coop Assoc Y/N</dt>
-                <dd></dd>
-              <dt>HOA Y/N</dt>
-                <dd></dd>
-              <dt>Association Fee</dt>
-                <dd></dd>
-              <dt>Association Fee Frequency</dt>
-                <dd></dd>
-              <dt>Age</dt>
-                <dd></dd>
-              <dt>Interior SqFt</dt>
-                <dd></dd>
-              <dt>Bedrooms</dt>
-                <dd></dd>
-              <dt>Baths</dt>
-                <dd></dd>
-              <dt>Baths Full</dt>
-                <dd></dd>
-              <dt>Partial Baths</dt>
-                <dd></dd>
-              <dt>Garage Spaces</dt>
-                <dd></dd>
-            </dl>
-          </div>
-          <div class="r_3">
-            <h3 class="title">       </h3>
-            <br><br>
-            <dl class="dl-horizontal">
-              <dt>Design</dt>
-                <dd></dd>
-              <dt>Style</dt>
-                <dd></dd>
-              <dt>Garage Y/N</dt>
-                <dd></dd>
-              <dt>Flooring</dt>
-                <dd></dd>
-              <dt>Hot Water</dt>
-                <dd></dd>
-              <dt>Water</dt>
-                <dd></dd>
-              <dt>Sewer</dt>
-                <dd></dd>
-              <dt>Basement Y/N</dt>
-                <dd></dd>
-              <dt>Basement Type</dt>
-                <dd></dd>
-              <dt>Exterior Material</dt>
-                <dd></dd>
-              <dt>Main Roof</dt>
-                <dd></dd>
-              <dt>Central Air Y/N</dt>
-                <dd></dd>
-              <dt>Cooling</dt>
-                <dd></dd>
-              <dt>Primary Heat</dt>
-                <dd></dd>
-            </dl>
-          </div>
-          
-
-        </div>
-
+        <h3 class="title">Welcome to HomeWise powered by RealLeads. This Tool helps home owners like you estimate...</h3>
         
       </div>
       
