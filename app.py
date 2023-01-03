@@ -70,26 +70,36 @@ def example():
    # This route tests calling a method in a python module to retrive data
    # to be embeded/rendered.
    return render_template("example.html")
+
 @app.route("/YourHome")
 def YourHome():
    # This route tests calling a method in a python module to retrive data
    # to be embeded/rendered.
    return render_template("YourHome.html")
+
 @app.route("/MyListPrice")
 def MyListPrice():
    # This route tests calling a method in a python module to retrive data
    # to be embeded/rendered.
    return render_template("MyListPrice.html")
+
 @app.route("/ExpectedPrice")
 def ExpectedPrice():
    # This route tests calling a method in a python module to retrive data
    # to be embeded/rendered.
    return render_template("ExpectedPrice.html")
+
 @app.route("/DaysOnMarket")
 def DaysOnMarket():
    # This route tests calling a method in a python module to retrive data
    # to be embeded/rendered.
    return render_template("DaysOnMarket.html")
+
+@app.route("/MyAgent")
+def MyAgent():
+   # This route tests calling a method in a python module to retrive data
+   # to be embeded/rendered.
+   return render_template("MyAgent.html")
     
 if __name__ == "__main__":
    app.run()
