@@ -80,6 +80,11 @@ def MyListPrice():
    # This route tests calling a method in a python module to retrive data
    # to be embeded/rendered.
    return render_template("MyListPrice.html")
+@app.route("/ExpectedPrice")
+def ExpectedPrice():
+   # This route tests calling a method in a python module to retrive data
+   # to be embeded/rendered.
+   return render_template("ExpectedPrice.html")
     
 if __name__ == "__main__":
    app.run()
