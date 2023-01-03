@@ -14,7 +14,7 @@
 
 from flask import Flask, render_template, render_template_string, request, redirect, url_for
 #from flask_pymongo import PyMongo
-from leads_map import leads_map
+from .leads_map import leads_map
 
 app = Flask(__name__)
 
