@@ -1,16 +1,3 @@
-<!---------------------------------------------------------------------
-* 
-* Name: index.html
-*
-* Description: 
-* This page is contains the index to all other pages for the RealLeads
-* Flask application.
-*
-* When a new template is rendered, the body of the index below the
-* section with the buttons for testing each route will replace what
-* is currently rendered in this section of the index page.
-*
------------------------------------------------------------------------>
 <!DOCTYPE html>
 <html lang="en">
   <style>
@@ -56,10 +43,11 @@
       text-align: center;
       position: relative;
       float:inline-end;
+      padding: 10px;
       vertical-align: top;
       left: 5px;
-      width:200rem;
-      height: 100rem;
+      width:75%;
+      height: auto;
       border: 1px solid #163f63;    
       background-color: #98cae8; 
     }
@@ -81,10 +69,75 @@
       background-color:rgb(243,159,45);
       transition: 0.4s;
     }
-    .title{
-            text-align: left;
-            color: white;
-   }
+    .form{
+      padding:15px;
+      float:center;
+      background-color: #163f63;
+      color: white;
+      height: auto;
+    }
+    input, label {
+      margin: 5px 5px;
+    }
+
+    .form-group {
+      background-color: #163f63;
+      margin: 30px auto;
+      width: 75%;
+    }
+
+    .form-control {
+      float: center;
+    }
+
+    #inputStreet {
+      width: 100%;
+    }
+
+    #inputCity {
+      display: inline-block;
+      width: 40%;
+    }
+
+    #inputState {
+      display: inline-block;
+      width: 40%;
+    }
+
+    #inputZip {
+      display: inline-block;
+      width: 19.2%;
+    }
+
+    #inputCounty {
+      display: inline-block;
+      width: 50.5%;
+    }
+    #inputMLS {
+      display: inline-block;
+      width:49%;
+    }
+    .formbutton{
+      background-color: rgb(142,110,67); 
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+
+    }
+    .formbutton:hover{
+      background-color:rgb(243,159,45);
+      transition: 0.4s;
+    }
+
+    .Description{
+        padding:10rem 10rem;
+
+    }
+
     footer {
     position: absolute;
     left: 0px;
@@ -123,7 +176,7 @@
 <header>
   <div class="jumbotron1">
     <div class="content1">
-      <h1 class="display-4">HOMEWISE - home page
+      <h1 class="display-4">HOMEWISE - Days On Market
         <img class="headerlogo" src="/static/images/logo.png" alt="My Image" />
       </h1>
       <h6 class="display-4" style="text-align:center">powered by RealLeads</h6>
@@ -164,8 +217,75 @@
       </div>
       <div class="main-section">
         <br>
-        <h3 class="title">Welcome to HomeWise powered by RealLeads. This Tool helps home owners like you estimate...</h3>
-        
+        <div class="form">
+          <div class="form-group">
+            <h3>Input Your Address Here</h3>
+            <input type="street" 
+                   class="form-control" 
+                   id="autocomplete" 
+                   placeholder="Street">
+            
+            <input type="city" 
+                   class="form-control" 
+                   id="inputCity" 
+                   placeholder="City">
+            
+            <input type="state" 
+                   class="form-control" 
+                   id="inputState" 
+                   placeholder="State">
+            
+            <input type="zip" 
+                   class="form-control" 
+                   id="inputZip" 
+                   placeholder="Zip">
+            
+            <input type="county" 
+                   class="form-control" 
+                   id="inputCounty" 
+                   placeholder="County">
+            <input type="MLS Number"
+                   class="form-control"
+                   id="inputMLS"
+                   placeholder="MLS Number">
+            <br>
+            <button class="formbutton">
+                  Click to Receive data
+            </button>
+          </div>
+        </div>
+        <br>
+        <style>
+          dd{
+            Border: 1px solid;
+            text-align: right;
+            background-color: white;
+            width: 200px;
+          }
+          dt{
+            width:300px;
+            text-align: left;
+          }
+          .title{
+            text-align: left;
+            color: white;
+          }
+         
+        </style>
+        <div class="results"> 
+            <h3 class="title">Get My Expected Days On Market</h3>
+            <dl class="dl-horizontal">
+              <dt>Expected Sold Price</dt>
+                <dd></dd>
+        </div>
+
+      <div class="Description">
+            <p>
+                <h2 class="title">YOUR EXPECTED DAYS ON MARKET is the time you can expect your house to sell measured in number of days, that is, before it goes under contract.
+                    Some houses may sell as quickly as three days or less, while others may take millions of years.
+                </h2>
+            </p>
+        </div>
       </div>
       
   </div> 

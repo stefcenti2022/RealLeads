@@ -85,6 +85,11 @@ def ExpectedPrice():
    # This route tests calling a method in a python module to retrive data
    # to be embeded/rendered.
    return render_template("ExpectedPrice.html")
+@app.route("/DaysOnMarket")
+def DaysOnMarket():
+   # This route tests calling a method in a python module to retrive data
+   # to be embeded/rendered.
+   return render_template("DaysOnMarket.html")
     
 if __name__ == "__main__":
    app.run()
