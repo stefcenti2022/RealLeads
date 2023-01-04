@@ -11,12 +11,12 @@
 
 <h4>Test for Retrieving DB Data</h4>
 
-<div>
-  <p>
-    Calling IdTable() in db_test.html and replaces home.html with the data
-    returned.
-  </p>
-  <p>{{id_table_data}}</p>
-</div>
+<form>
+  <label>MLS Number:</label>
+  <input value={{ id_table_data[0]['MLSNumber'] }} readonly>
+  <br />
+  <label>Address:</label>
+  <input value={{ id_table_data[0]['Address'] }} readonly>
+</form>
 
 {% endblock %}

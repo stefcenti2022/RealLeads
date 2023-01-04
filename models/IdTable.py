@@ -26,6 +26,7 @@
 
 # Import dependencies
 import pandas as pd
+import json
 
 from flask import Flask, jsonify
 
@@ -38,13 +39,13 @@ class IdTable:
         self.csvfile = path + self.name + '.csv'
         self.df = pd.read_csv(self.csvfile)
 
-    def read(self):
-        return self.df.to_json()
+    def read_all(self):
+        return json.loads(self.df.to_json(orient='records'))
     
     def read(self, mls_number):
         results = self.df.loc[self.df['MLSNumber'] == mls_number]
 
-        return results.to_json()
+        return json.loads(results.to_json(orient='records'))
     
 #---------------------------------------------------------------------------
 # Functions for accessing Id Table Data
