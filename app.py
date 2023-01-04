@@ -15,6 +15,7 @@
 from flask import Flask, render_template, render_template_string, request, redirect, url_for
 #from flask_pymongo import PyMongo
 from .leads_map import leads_map
+from .models import IdTable
 
 app = Flask(__name__)
 
@@ -64,6 +65,14 @@ def mapbox_test_eq():
    # This route tests calling javascript scripts to retrive render
    # the earthquake map from challenge_logic.js.
    return render_template("mapbox_test_eq.html")
+
+@app.route("/db_test/<mls_number>")
+def db_test(mls_number):
+   # This route tests calling a method in a python module to retrive data
+   # to be embeded/rendered.
+   id_table_data = IdTable.get_id_table_model(mls_number)
+   return render_template("db_test.html", id_table_data = id_table_data)
+
     
 if __name__ == "__main__":
    app.run()
