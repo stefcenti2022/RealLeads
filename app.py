@@ -73,6 +73,13 @@ def db_test(mls_number):
    # to be embeded/rendered.
    id_table_data = IdTable.get_id_table_model(mls_number)
    return render_template("db_test.html", id_table_data=id_table_data)
+
+@app.route("/more_info/<mls_number>")
+def more_info(mls_number):
+   # This route tests calling javascript scripts to retrive render
+   # a map using the mapbox API.
+   map, header = leads_map.get_map(mls_number)
+   return render_template("mapbox_test.html", map = map, header = header)
     
 if __name__ == "__main__":
    app.run()
