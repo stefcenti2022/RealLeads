@@ -1,0 +1,45 @@
+CSV Name,Field Name
+Address,Street
+City,City
+State,State
+Zip_Code,Zip
+County,County
+MLSNumber,MLS Number
+Sold_Price,Sold Price
+Orig_List_Price,Original Sales Price
+Days_on_Market,DOM
+SettleDate,Settled Date
+County,County
+Subdivision,Subdivision
+SchoolDistrict,School District
+Acres,Acres
+Ownership,Ownership
+Senior_Community_YN,Senior Community Y/N
+Condo/Coop_Assoc_YN,Condo/Coop Assoc Y/N
+HOA_YN,HOA Y/N
+AssociationFee,Association Fee
+AssociationFeeFrequency,Association Fee Freq…
+Age,Age
+InteriorSqFt,Interior SqFt
+Bedrooms,Bedrooms
+Baths,Baths
+BathsFull,Baths Full
+PartialBaths,Partial Baths
+GarageSpaces,Garage Spaces
+Design,Design
+Style,Style
+Garage_YN,Garage Y/N
+Flooring,Flooring
+HotWater,Hot Water
+Water,Water
+Sewer,Sewer
+Basement_YN,Basement Y/N
+BasementType,Basement Type
+ExteriorMaterial,Exterior Material
+Main_Roof,Main Roof
+Central_Air_YN,Central Air Y/N
+Cooling,Cooling
+PrimaryHeat,Primary Heat
+Pred_Orig_List_Price,GET MY SUGGESTED LIST PRICE
+Pred_Sold_Price,GET MY EXPECTED SOLD PRICE
+Predicted_DOM,GET MY EXPECTED DAYS ON MARKET
