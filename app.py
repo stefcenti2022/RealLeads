@@ -80,7 +80,6 @@ def more_info(mls_number):
    # a map using the mapbox API.
    map, header = leads_map.get_map(mls_number)
    return render_template("mapbox_test.html", map = map, header = header)
-
     
 if __name__ == "__main__":
    app.run()
