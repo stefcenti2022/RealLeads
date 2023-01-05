@@ -13,90 +13,6 @@
 ----------------------------------------------------------------------->
 <!DOCTYPE html>
 <html lang="en">
-  <style>
-    .jumbotron1 {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      height: 125px;
-      background-color: #163f63;
-      color:white;
-      padding-top: 10px;
-    }
-    .headerlogo {
-      width: 150px;
-      float: right;
-      padding-right: 50px;
-    }
-    .display-4 {
-      position: relative;
-      text-align: center;
-      padding-left: 150px;
-    }
-    .main {
-      padding: 1rem 1rem;
-      text-align: left;
-    }
-    .control-panel {
-      display: inline-block;
-      vertical-align: middle;
-      text-align: center;
-      position: relative;
-      padding-left: 0px;
-      width: 175px;
-      height:auto;
-      background-color:#163f63 ;
-    }
-    .controlmenu {
-      color: white;
-    }
-    .main-section{
-      display: inline-block;
-      vertical-align: middle;
-      text-align: center;
-      position: relative;
-      float:inline-end;
-      vertical-align: top;
-      left: 5px;
-      width:100rem;
-      height: 90rem;
-      border: 1px solid #163f63;    
-      background-color: #98cae8; 
-    }
-    .nav-button {
-      background-color:rgb(142,110,67);
-      border: none;
-      color: white;
-      padding: 5px 20px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      margin: 4px 2px;
-      cursor: pointer;
-      border-radius: 50px;
-      width: 150px;
-      height: 70px;
-    }
-    .nav-button:hover {
-      background-color:rgb(243,159,45);
-      transition: 0.4s;
-    }
-    .title{
-            text-align: left;
-            color: white;
-   }
-    footer {
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-    height: 100px;
-    width: 100%;
-    background-color: #163f63;
-    text-align: center;
-    }
-    
-
-  </style>
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -138,29 +54,35 @@
           <h3>Menu</h3>
         </div>
         <button class="nav-button" onclick="">
-          <a class="nav-link active" href="{{ url_for('home') }}"></a>
-        Home
+          <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
         </button>
         <button class="nav-button">
-          <a class="nav-link active" href="{{ url_for('YourHome') }}"></a>
-        Your Home
+          <a class="nav-link active" href="{{ url_for('YourHome') }}">Your Home</a>
         </button>
         <button class="nav-button">
-          <a class="nav-link active" href="{{ url_for('MyListPrice') }}"></a>
-        My List Price
+          <a class="nav-link active" href="{{ url_for('MyListPrice') }}">My List Price</a>  
         </button>
         <button class="nav-button">
-          <a class="nav-link active" href="{{ url_for('ExpectedPrice') }}"></a>
-        My Expected Sold Price
+          <a class="nav-link active" href="{{ url_for('ExpectedPrice') }}">My Expected Sold Price</a>
+        
         </button>
         <button class="nav-button">
-          <a class="nav-link active" href="{{ url_for('DaysOnMarket') }}"></a>
-        My Expected Days On Market
+          <a class="nav-link active" href="{{ url_for('DaysOnMarket') }}">My Expected Days On Market</a>
+        
         </button>
         <button class="nav-button">
-          <a class="nav-link active" href="{{ url_for('MyAgent') }}"></a>
-        My Agent 
+          <a class="nav-link active" href="{{ url_for('MyAgent') }}">My Agent</a>
+         
         </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('tableau_test', story_id = 1) }}">Tableau</a>
+         
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('mapbox_test') }}">MapBox</a>
+         
+        </button>
+
       </div>
       <div class="main-section">
         <br>

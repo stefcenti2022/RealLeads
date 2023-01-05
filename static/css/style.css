@@ -40,3 +40,87 @@ footer {
   color: white;
   position: relative;
 }
+
+.jumbotron1 {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 125px;
+  background-color: #163f63;
+  color:white;
+  padding-top: 10px;
+}
+.headerlogo {
+  width: 150px;
+  float: right;
+  padding-right: 50px;
+}
+.display-4 {
+  position: relative;
+  text-align: center;
+  padding-left: 150px;
+}
+.main {
+  padding: 1rem 1rem;
+  text-align: left;
+}
+.control-panel {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+  padding-left: 0px;
+  width: 175px;
+  height:auto;
+  background-color:#163f63 ;
+}
+.controlmenu {
+  color: white;
+}
+.main-section{
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+  float:inline-end;
+  vertical-align: top;
+  left: 5px;
+  width:100rem;
+  height: 90rem;
+  border: 1px solid #163f63;    
+  background-color: #98cae8; 
+}
+.nav-button {
+  background-color:rgb(142,110,67);
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50px;
+  width: 150px;
+  height: 70px;
+}
+.nav-button:hover {
+  background-color:rgb(243,159,45);
+  transition: 0.4s;
+}
+.nav-link{
+  color:white;
+}
+.title{
+        text-align: left;
+        color: white;
+}
+footer {
+position: absolute;
+left: 0px;
+bottom: 0px;
+height: 100px;
+width: 100%;
+background-color: #163f63;
+text-align: center;
+}
