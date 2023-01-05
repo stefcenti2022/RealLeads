@@ -11,12 +11,15 @@
 
 <h4>Test for Retrieving DB Data</h4>
 
-<form>
+<form
+  action="{{ url_for('more_info', mls_number=id_table_data[0]['MLSNumber']) }}"
+>
   <label>MLS Number:</label>
-  <input value={{ id_table_data[0]['MLSNumber'] }} readonly>
+  <input value="{{ id_table_data[0]['MLSNumber'] }}" readonly />
   <br />
   <label>Address:</label>
-  <input value={{ id_table_data[0]['Address'] }} readonly>
+  <input value="{{ id_table_data[0]['Address'] }}" readonly />
+  <input type="submit" value="More Info" />
 </form>
 
 {% endblock %}
