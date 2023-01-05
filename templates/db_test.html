@@ -1,0 +1,25 @@
+<!---------------------------------------------------------------------
+* 
+* Name: db_test.html
+*
+* Description:
+* This page will test making a call to the postgresql db and render
+* the data returned in template.
+* 
+----------------------------------------------------------------------->
+{% extends 'home.html' %} {% block body %}
+
+<h4>Test for Retrieving DB Data</h4>
+
+<form
+  action="{{ url_for('more_info', mls_number=id_table_data[0]['MLSNumber']) }}"
+>
+  <label>MLS Number:</label>
+  <input value="{{ id_table_data[0]['MLSNumber'] }}" readonly />
+  <br />
+  <label>Address:</label>
+  <input value="{{ id_table_data[0]['Address'] }}" readonly />
+  <input type="submit" value="More Info" />
+</form>
+
+{% endblock %}
