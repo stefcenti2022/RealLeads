@@ -1,0 +1,114 @@
+<!---------------------------------------------------------------------
+* 
+* Name: base.html
+*
+* Description: 
+* This page is a TEST dashboard for all other pages in the RealLeads
+* Flask application.
+*
+* Purpose: 
+* It's purpose is to allow developers to add a new routes to and
+* new html pages for testing flask routing with different types of data 
+* instead of adding unnecessary funtionality to the main application. 
+*
+* To a New Route:
+* - Add a new button to test the new route below.
+* - Create a new <route_name>.html file in the templates folder.
+* - Add code to the new template that will be rendered using flask.
+* - In app.py add the new route and code to render the new template.
+*
+* NOTE: The body of the home page is below the buttons used for testing.
+* When a test button is clicked, flask will go to the route and render
+* the new template in the body section of the home page below the buttons.
+*
+----------------------------------------------------------------------->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RealLeads</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+    <!-- d3 JavaScript -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+  </head>
+  <body>
+    <div class="jumbotron1">
+      <div class="content1">
+        <h1 class="display-4">HOMEWISE - home page
+          <img class="headerlogo" src="/static/images/logo.png" alt="My Image" />
+        </h1>
+        <h6 class="display-4" style="text-align:center">powered by RealLeads</h6>
+      </div>
+    </div>
+    </div>
+
+
+    <div class="main">
+
+      <div class="control-panel">
+        <div class="controlmenu">
+          <h3>Menu</h3>
+        </div>
+        <button class="nav-button" onclick="">
+          <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('YourHome') }}">Your Home</a>
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('MyListPrice') }}">My List Price</a>  
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('ExpectedPrice') }}">My Expected Sold Price</a>
+        
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('DaysOnMarket') }}">My Expected Days On Market</a>
+        
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('MyAgent') }}">My Agent</a>
+         
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('tableau_test', story_id = 1) }}">Tableau</a>
+         
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('mapbox_test_eq') }}">MapBox</a>
+         
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('db_test', mls_number = 'DENC518086') }}">DB Test</a>
+         
+        </button>
+      </div>
+
+      <div class="main-section" class="content">
+      
+        {% block content %}
+
+        {% endblock %}
+
+      </div>
+
+    </div>
+
+  </body>
+  {% include 'footer.html' %}
+</html>

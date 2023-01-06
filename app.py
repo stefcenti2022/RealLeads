@@ -116,7 +116,7 @@ def more_info(mls_number):
    # This route tests calling javascript scripts to retrive render
    # a map using the mapbox API.
    map, header = leads_map.get_map(mls_number)
-   return render_template("mapbox_test.html", map = map, header = header)
+   return render_template("more_info.html", map = map, header = header)
 
     
 if __name__ == "__main__":
