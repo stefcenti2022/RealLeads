@@ -15,7 +15,7 @@
 from flask import Flask, render_template, render_template_string, request, redirect, url_for
 #from flask_pymongo import PyMongo
 from .leads_map import leads_map
-from .models import IdTable
+from .models import IdTable, Sample
 import json
 
 app = Flask(__name__)
@@ -67,7 +67,6 @@ def mapbox_test_eq():
    # the earthquake map from challenge_logic.js.
    return render_template("mapbox_test_eq.html")
 
-
 @app.route("/example")
 def example():
    # This route tests calling a method in a python module to retrive data
@@ -80,11 +79,12 @@ def YourHome():
    # to be embeded/rendered.
    return render_template("YourHome.html")
 
-@app.route("/MyListPrice")
-def MyListPrice():
+@app.route("/MyListPrice/<mls_number>")
+def MyListPrice(mls_number):
    # This route tests calling a method in a python module to retrive data
    # to be embeded/rendered.
-   return render_template("MyListPrice.html")
+   sample_data = Sample.get_sample_model(mls_number)
+   return render_template("MyListPrice.html", data=sample_data)
 
 @app.route("/ExpectedPrice")
 def ExpectedPrice():
