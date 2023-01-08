@@ -46,6 +46,7 @@
       class="form-control"
       id="inputMLS"
       placeholder="MLS Number"
+      value="{{ sample.mls_number }}"
     />
     <br />
     <button class="formbutton">Click to Receive data</button>
@@ -76,7 +77,7 @@
     <h3 class="title">Get My Suggested List Price</h3>
     <dl class="dl-horizontal">
     <dt>List Price</dt>
-    <dd>{{ data[0]['Pred_Orig_List_Price'] }}</dd>
+    <dd>{{ sample.pred_orig_list_price }}</dd>
 </div>
 
 <div class="Description">

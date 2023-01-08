@@ -81,10 +81,11 @@ def YourHome():
 
 @app.route("/MyListPrice/<mls_number>")
 def MyListPrice(mls_number):
-   # This route tests calling a method in a python module to retrive data
-   # to be embeded/rendered.
-   sample_data = Sample.get_sample_model(mls_number)
-   return render_template("MyListPrice.html", data=sample_data)
+   # This route creates a Sample record from the ml_samples data for a give mls_number
+   # The predicted original list price is sent to the my_list_price view to populate
+   # the List Price field.
+   sample = Sample.Sample(mls_number)
+   return render_template("MyListPrice.html", sample=sample)
 
 @app.route("/ExpectedPrice")
 def ExpectedPrice():
