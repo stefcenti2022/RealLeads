@@ -1,0 +1,48 @@
+<!---------------------------------------------------------------------
+* 
+* Name: search_test.html
+*
+* Description:
+* This page will test inclusion of a partial template which contains
+* a form for searching for MLS data.
+* 
+----------------------------------------------------------------------->
+{% extends 'base.html' %} {% block content %}
+
+{% include '_search.html' %}
+
+<br>
+
+<style>
+  dd{
+    Border: 1px solid;
+    text-align: right;
+    background-color: white;
+    width: 200px;
+  }
+  dt{
+    width:300px;
+    text-align: left;
+  }
+  .title{
+    text-align: left;
+    color: white;
+  }
+  
+</style>
+
+<div class="results"> 
+    <h3 class="title">Get My Suggested List Price</h3>
+    <dl class="dl-horizontal">
+    <dt>List Price</dt>
+    <dd>{{ search.get('Pred_Orig_List_Price') }}</dd>
+</div>
+
+<div class="Description">
+    <p>
+        <h2 class="title">YOUR SUGGESTED LIST PRICE tells you how much you should consider listing your house for. 
+        Similar to a car or a retail item, the list price is the initial price that...
+        </h2>
+    </p>
+</div>
+{% endblock %}

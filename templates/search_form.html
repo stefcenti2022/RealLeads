@@ -1,0 +1,25 @@
+{% extends "base.html" %} 
+
+{% block title %}
+  <title>HomeWise Search</title>
+{% endblock %} 
+
+{% block content %}
+<div class="container">
+  <form method="POST" action="/search">
+    {{ form.address.label }}
+    <select class="selectpicker" data-style="btn btn-primary" data-live-search="true">
+      {% for address in form.address.choices %}
+        <option>{{ address }}</option>
+      {% endfor %}
+    </select>
+    <br>
+    {{ form.city.label }} {{ form.city }}
+    {{ form.state.label }} {{ form.state }}
+    {{ form.zipcode.label }} {{ form.zipcode }}
+    {{ form.mls_number.label }} {{ form.mls_number }}
+    <br>
+    <input class="btn btn-primary" type="submit" value="Receive Data" />
+  </form>
+</div>
+{% endblock %}

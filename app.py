@@ -13,12 +13,23 @@
 #-------------
 
 from flask import Flask, render_template, render_template_string, request, redirect, url_for
+#from flask_bootstrap import Bootstrap
+from flask_wtf.csrf import CSRFProtect
+from flask_wtf import FlaskForm
 #from flask_pymongo import PyMongo
 from .leads_map import leads_map
-from .models import IdTable, Sample
-import json
+from .models import IdTable, HomeListing
+from .models import SearchData as sd
+from .forms import SearchForm as sf
+import os
+
+csrf = CSRFProtect()
 
 app = Flask(__name__)
+
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+
+csrf.init_app(app)
 
 # Use flask_pymongo to set up mongo connection
 #app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_app"
@@ -84,7 +95,7 @@ def MyListPrice(mls_number):
    # This route creates a Sample record from the ml_samples data for a give mls_number
    # The predicted original list price is sent to the my_list_price view to populate
    # the List Price field.
-   sample = Sample.Sample(mls_number)
+   sample = HomeListing.HomeListing(mls_number)
    return render_template("MyListPrice.html", sample=sample)
 
 @app.route("/ExpectedPrice")
@@ -105,12 +116,48 @@ def MyAgent():
    # to be embeded/rendered.
    return render_template("MyAgent.html")
 
-@app.route("/db_test/<mls_number>")
-def db_test(mls_number):
-   # This route tests calling a method in a python module to retrive data
-   # to be embeded/rendered.
-   id_table_data = IdTable.get_id_table_model(mls_number)
-   return render_template("db_test.html", id_table_data=id_table_data)
+#-------------------------------------------
+# **** SEARCH FORM ROUTES ****
+#
+# The following routes are used for searching based on selections
+# made on the Search form rendered at the top of several of the 
+# templates.
+#---------------------------------------------
+@app.route("/search_test/")
+#@app.route("/search_test/?<search_str>")
+def search_test(search_str=None):
+   # This route is used for testing out ideas before changing other routes
+   # that are currently working.  Once the app is tested and ready for demonstration
+   # the button to access this route will be commented out of the base.html page.
+   args=request.args
+   if args:
+      search = sd.SearchData('search_test', mls_number=args.get('mls_number'))
+      search.search_test('1')
+   else:
+      search = sd.SearchData('search_test')
+      search.search_test('2')
+   return render_template("search_test.html", search=search)
+   #id_table_data = IdTable.get_id_table_model(mls_number)
+   #return render_template("db_test.html", id_table_data=id_table_data)
+
+@app.route("/search", methods=['GET', 'POST'])
+def search():
+   form = sf.SearchForm(request.form)
+
+   args=request.args
+   if args:
+      data = sd.SearchData('search_test', address=args.get('address'))
+      form.city = data.city
+      form.state = data.state
+      form.zipcode = data.zip_code
+      form.mls_number = data.mls_number
+   else:
+      data = sd.SearchData('search_test')
+
+   form.address.choices = data.addresses
+
+   return render_template('search_form.html', form=form)
+
 
 @app.route("/more_info/<mls_number>")
 def more_info(mls_number):
@@ -119,6 +166,5 @@ def more_info(mls_number):
    map, header = leads_map.get_map(mls_number)
    return render_template("more_info.html", map = map, header = header)
 
-    
 if __name__ == "__main__":
    app.run()

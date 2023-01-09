@@ -1,0 +1,60 @@
+<!---------------------------------------------------------------------
+* 
+* Name: _search.html
+*
+* Description:
+* This is a partial template that can be included to add a search 
+* form with drop down menus for each field so the user can select a
+* value and click on the form button to retrieve the data which will
+* be rendered in the content portion of the full template/view.
+*
+* Input:
+*   - search_data: this is an object that has contains the data for each
+*       field on the search form. 
+*
+*       This object also contains the following information in order
+*       to render the correct data on to the form wherever this partial
+*       template is included:
+*         - search_data.view_name: this is the name of the template/view that 
+*           will be rendered when the form button is clicked
+*         - search_data.button_value: this contains the text string to be
+*           diplayed on the form button.
+*
+*       Please refer to SearchData.py for more info on the usage of class.
+*
+* NOTE: Templates that use this partial template must accept an
+* mls_number to be used as a key to retrieve the data to be rendered.
+*
+----------------------------------------------------------------------->
+
+<h2>Test search form for drop down menus using search data</h2>
+
+<form action="{{ url_for(search.view_name) }}">
+  <label>MLS Number:</label>
+  <select name="mls_number">
+    {% for mls_number in search.mls_numbers %} {% if msl_number ==
+    search.get('MLSNumber') %}
+    <option value="{{ mls_number }}" selected>
+      selected:{{ search.get('MLSNumber') }}:{{ mls_number }}
+    </option>
+    {% else %}
+    <option value="{{ mls_number }}">
+      not selected:{{ search.get('MLSNumber') }}:{{ mls_number }}
+    </option>
+    {% endif %} {% endfor %}
+  </select>
+
+  <br />
+
+  <label>Address:</label>
+  <select name="address">
+    <option value="{{ search.addresses[0] }}" selected>
+      {{ search.addresses[0] }}
+    </option>
+    {% for address in search.addresses[1:] %}
+    <option value="{{ address }}">{{ address }}</option>
+    {% endfor %}
+  </select>
+
+  <input type="submit" value="{{ search.button_value }}" />
+</form>

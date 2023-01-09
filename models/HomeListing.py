@@ -1,9 +1,9 @@
 #---------------------------------------------------------------------------
-# Name: Sample.py
+# Name: HomeListing.py
 #
 # Description:
 # Python class with methods for Creating, Reading, Updating and Deleting
-# Sample records provided by the machine learning algorithms.
+# Sample home listing records provided by the machine learning algorithms.
 #
 # Note: for demonstration purposes, each model will be using CSV files and
 # will only perform Read operations to start.
@@ -18,8 +18,8 @@
 #
 # read(self): This method will return all Id objects from the Sample DF in a JSON list.
 #
-# read(self, mls_number): Given an mls_number, this method will retrieve the 
-# instantiate a Sample object which will retrieve it's data using the coresponding 
+# read(self, mls_number): Given an mls_number, this method will instantiate
+# a HomeListing object which will retrieve it's data using the coresponding 
 # mls_number and return a JSON list to be renedered by the appropriate View.
 #
 #---------
@@ -33,14 +33,14 @@ from flask import Flask, jsonify
 #---------------------------------------------------------------------------
 # Class Definition for Sample Data Model
 #---------------------------------------------------------------------------
-class Sample:
-    def __init__(self, mls_number):
+class HomeListing:
+    def __init__(self, address):
         self._name = 'ml_samples'
         self._path = './Resources/'
         self._csvfile = self._path + self._name + '.csv'
         self._df = pd.read_csv(self._csvfile)
 
-        results = self._df.loc[self._df['MLSNumber'] == mls_number]
+        results = self._df.loc[self._df['Address'] == address]
         json_res = json.loads(results.to_json(orient='records'))
         self._data = json_res[0]
 
@@ -439,7 +439,7 @@ class Sample:
     def read_all(self):
         return json.loads(self.df.to_json(orient='records'))
     
-    def read(self, mls_number):
-        results = self.df.loc[self.df['MLSNumber'] == mls_number]
+    def read(self, address):
+        results = self.df.loc[self.df['Address'] == address]
 
         return json.loads(results.to_json(orient='records'))
