@@ -67,6 +67,43 @@ def mapbox_test_eq():
    # the earthquake map from challenge_logic.js.
    return render_template("mapbox_test_eq.html")
 
+
+@app.route("/example")
+def example():
+   # This route tests calling a method in a python module to retrive data
+   # to be embeded/rendered.
+   return render_template("example.html")
+
+@app.route("/YourHome")
+def YourHome():
+   # This route tests calling a method in a python module to retrive data
+   # to be embeded/rendered.
+   return render_template("YourHome.html")
+
+@app.route("/MyListPrice")
+def MyListPrice():
+   # This route tests calling a method in a python module to retrive data
+   # to be embeded/rendered.
+   return render_template("MyListPrice.html")
+
+@app.route("/ExpectedPrice")
+def ExpectedPrice():
+   # This route tests calling a method in a python module to retrive data
+   # to be embeded/rendered.
+   return render_template("ExpectedPrice.html")
+
+@app.route("/DaysOnMarket")
+def DaysOnMarket():
+   # This route tests calling a method in a python module to retrive data
+   # to be embeded/rendered.
+   return render_template("DaysOnMarket.html")
+
+@app.route("/MyAgent")
+def MyAgent():
+   # This route tests calling a method in a python module to retrive data
+   # to be embeded/rendered.
+   return render_template("MyAgent.html")
+
 @app.route("/db_test/<mls_number>")
 def db_test(mls_number):
    # This route tests calling a method in a python module to retrive data
@@ -80,6 +117,7 @@ def more_info(mls_number):
    # a map using the mapbox API.
    map, header = leads_map.get_map(mls_number)
    return render_template("mapbox_test.html", map = map, header = header)
+
     
 if __name__ == "__main__":
    app.run()
