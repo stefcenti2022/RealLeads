@@ -93,4 +93,4 @@ LINK WILL BE ADDED
 
 ## Home Page Example
 
-<img src="./static/images/home_page_example (1).jpg" alt="Sample Home Page" width="500"/>
+<img src="./Resources/images/home_page_example (1).jpg" alt="Sample Home Page" width="500"/>
