@@ -1,0 +1,54 @@
+<!---------------------------------------------------------------------
+* 
+* Name: MyListPrice.html
+*
+* Description: 
+* This page is contains the index to all other pages for the RealLeads
+* Flask application.
+*
+* When a new template is rendered, the body of the index below the
+* section with the buttons for testing each route will replace what
+* is currently rendered in this section of the index page.
+*
+----------------------------------------------------------------------->
+{% extends 'base.html' %} {% block content %}
+<br>
+
+<input type="hidden" id='list_price'/>
+
+{% include 'search_form.html' %}
+
+<style>
+  dd{
+    Border: 1px solid;
+    text-align: right;
+    background-color: white;
+    width: 200px;
+  }
+  dt{
+    width:300px;
+    text-align: left;
+  }
+  .title{
+    text-align: left;
+    color: white;
+  }
+  
+</style>
+
+<div class="results"> 
+    <h3 class="title">Get My Suggested List Price</h3>
+    <dl class="dl-horizontal">
+    <dt>List Price</dt>
+    <dd>{{ content_form.list_price }}</dd>
+</div>
+
+<div class="Description">
+    <p>
+        <h2 class="title">YOUR SUGGESTED LIST PRICE tells you how much you should consider listing your house for. 
+        Similar to a car or a retail item, the list price is the initial price that...
+        </h2>
+    </p>
+</div>
+
+{% endblock %}

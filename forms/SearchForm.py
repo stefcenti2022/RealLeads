@@ -10,7 +10,7 @@ class SearchForm(FlaskForm):
     # 
     # The list of addresses will be added to the dropdown after the Form is 
     # created in app.py
-    address = SelectField(label='Address', validate_choice=False)
+    address = SelectField(id='address', label='Address', validate_choice=False)
 
     # Once an address is chosen the following fields will be populated with
     # the rest of the address data and the MLS number for the address selected.
@@ -18,6 +18,16 @@ class SearchForm(FlaskForm):
     state = StringField(label='State', render_kw={'readonly': True})
     zipcode = StringField(label='Zip Code', render_kw={'readonly': True})
     mls_number = StringField(label='MLSNumber', render_kw={'readonly': True})
+
+    content_name = '/'
+
+    @property
+    def content_name(self):
+        return self.content_name
+
+    @content_name.setter
+    def content_name(self, value):
+        self.content_name = value    
 
 # View Functions: These functions allow the app to access data to be displayed on the Form
 def view_listing_price(request, address):
