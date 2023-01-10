@@ -18,7 +18,7 @@ from flask_wtf.csrf import CSRFProtect
 from flask_wtf import FlaskForm
 #from flask_pymongo import PyMongo
 from .leads_map import leads_map
-from .models import IdTable, HomeListing
+from .models import SampleTable, HomeListing
 from .models import SearchData as sd
 from .forms import SearchForm as sf
 import os
@@ -30,6 +30,8 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
 csrf.init_app(app)
+
+samples = SampleTable.SampleTable()
 
 # Use flask_pymongo to set up mongo connection
 #app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_app"
@@ -90,12 +92,12 @@ def YourHome():
    # to be embeded/rendered.
    return render_template("YourHome.html")
 
-@app.route("/MyListPrice/<mls_number>")
-def MyListPrice(mls_number):
+@app.route("/MyListPrice/<address>")
+def MyListPrice(address):
    # This route creates a Sample record from the ml_samples data for a give mls_number
    # The predicted original list price is sent to the my_list_price view to populate
    # the List Price field.
-   sample = HomeListing.HomeListing(mls_number)
+   sample = HomeListing.HomeListing(address)
    return render_template("MyListPrice.html", sample=sample)
 
 @app.route("/ExpectedPrice")
@@ -140,21 +142,24 @@ def search_test(search_str=None):
    #id_table_data = IdTable.get_id_table_model(mls_number)
    #return render_template("db_test.html", id_table_data=id_table_data)
 
-@app.route("/search", methods=['GET', 'POST'])
+@app.route("/search/", methods=['GET', 'POST'])
 def search():
    form = sf.SearchForm(request.form)
 
    args=request.args
    if args:
-      data = sd.SearchData('search_test', address=args.get('address'))
+      #data = sd.SearchData('search_test', address=args.get('address'))
+      data = samples.read('Address', args.get('address'))
+      #form.address = data.address
       form.city = data.city
       form.state = data.state
       form.zipcode = data.zip_code
       form.mls_number = data.mls_number
-   else:
-      data = sd.SearchData('search_test')
 
-   form.address.choices = data.addresses
+   data = samples.read_all('Address')
+   print('+++++++++++++ DATA +++++++++++=')
+   print(data)
+   form.address.choices = data
 
    return render_template('search_form.html', form=form)
 

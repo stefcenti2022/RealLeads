@@ -34,7 +34,7 @@ from flask import Flask, jsonify
 # Class Definition for Sample Data Model
 #---------------------------------------------------------------------------
 class HomeListing:
-    def __init__(self, address):
+    def __init__(self, address=None):
         self._name = 'ml_samples'
         self._path = './Resources/'
         self._csvfile = self._path + self._name + '.csv'
