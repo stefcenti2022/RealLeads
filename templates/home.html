@@ -47,81 +47,79 @@
     <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
   </head>
   <body>
-    <div class="container">
-      <!-- Add Jumbotron to Header -->
-      <div class="jumbotron">
-        <!-- Heading is not needed because the graphic is the heading. -->
-
-        <img
-          src="/static/images/home_page_header.png"
-          class="jumbotron-image"
-          alt="Header Background"
-        />
+    <div class="jumbotron1">
+      <div class="content1">
+        <h1 class="display-4">HOMEWISE - home page
+          <img class="headerlogo" src="/static/images/logo.png" alt="My Image" />
+        </h1>
+        <h6 class="display-4" style="text-align:center">powered by RealLeads</h6>
       </div>
     </div>
+    </div>
+    <div class="main">
+      <div class="control-panel">
+        <div class="controlmenu">
+          <h3>Menu</h3>
+        </div>
+        <button class="nav-button" onclick="">
+          <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('YourHome') }}">Your Home</a>
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('MyListPrice') }}">My List Price</a>  
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('ExpectedPrice') }}">My Expected Sold Price</a>
+        
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('DaysOnMarket') }}">My Expected Days On Market</a>
+        
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('MyAgent') }}">My Agent</a>
+         
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('tableau_test', story_id = 1) }}">Tableau</a>
+         
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('mapbox_test') }}">MapBox</a>
+         
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('mapbox_test_eq') }}">MapBox</a>
+         
+        </button>
 
-    <h4>Buttons for Testing Flask Routes</h4>
-    <a
-      class="btn btn-primary btn-lg btn3d"
-      href="{{ url_for('home') }}"
-      role="button"
-    >
-      Home
-    </a>
-    <a
-      class="btn btn-primary btn-lg btn3d"
-      href="{{ url_for('extends_test') }}"
-      role="button"
-    >
-      Extends Test
-    </a>
+
+      </div>
+      <div class="main-section">
+        <br>
+        <h3 class="title">Welcome to HomeWise powered by RealLeads. This Tool helps home owners like you estimate...</h3>
+        
+      </div>
+
+
+  <div id="mapid"></div>
 
     <a
       class="btn btn-primary btn-lg btn3d"
-      href="{{ url_for('list_test') }}"
+      href="{{ url_for('db_test', mls_number = 'DENC518086') }}"
       role="button"
     >
-      List Test
+      DB Test
     </a>
 
-    <a
-      class="btn btn-primary btn-lg btn3d"
-      href="{{ url_for('tableau_test', story_id = 1) }}"
-      role="button"
-    >
-      Embeded Tableau Story Test
-    </a>
-
-    <a
-      class="btn btn-primary btn-lg btn3d"
-      href="https://public.tableau.com/views/BikeSharingAnalysis_16678076895740/NYCBikeTour?:language=en-US&:display_count=n&:origin=viz_share_link')"
-      target="_blank"
-      role="button"
-    >
-      Link Tableau Story Test
-    </a>
-
-    <a
-      class="btn btn-primary btn-lg btn3d"
-      href="{{ url_for('script_test') }}"
-      role="button"
-    >
-      Script Test
-    </a>
-
-    <a
-      class="btn btn-primary btn-lg btn3d"
-      href="{{ url_for('mapbox_test') }}"
-      role="button"
-    >
-      Mapbox Test
-    </a>
 
     {% block body %}
 
     <h4>This is the RealLeads Home page.</h4>
     <!-- This is the div that holds our map -->
-    <div id="mapid"></div>
+    
 
     {% endblock %}
   </body>

@@ -44,6 +44,7 @@ VS Code, JupyterNotebook, Pandas, Numpy, Scikit-Learn, psycopg2, Flask, pgAdmin4
 ## Machine Learning Model
 
 ### Supervised
+
 We start predicting the listing price first and followed with sold price and the date range, because each machine learning builds off of each other that requires the previous model’s information.
 
 Eighty percent of the data is being used to train the model while the remaining twenty percent is used to test the model. Once that is done we begin testing on multiple models. 
@@ -53,9 +54,11 @@ Predicting the list price:
 <img src="./Resources/images/modelslistprice.png" alt="Prediction Results" width="500"/>
 
 List Price Prediction Results:
+
 RandomForestRegressor model is being the best option, we decided to attempt one more method which is scaling our data with a StandardScaler. StandardScaler is used to reallocate the distribution of values so that the mean is 0 and the Standard Deviation is 1. Model accuracy became 75%
 
 Predicted Sold Price:
+
 To predict the sold price of the house which we add the original list price to our existing data table to help figure out what the prediction on what the house would be sold for. Because of built in fuctions and retraining on random states we decided to stick with Random Forest Regressor. Model accuracy: 86%
 
 <img src="./Resources/images/ML_Graphs/overall_diff_orig_zipcode.png" alt="Prediction Results by zipcode" width="500"/>
@@ -74,7 +77,7 @@ This step was an optional steps for RealLeads team, but we wanted to see if we c
 
 <img src="./Resources/images/elbow_curve.png" alt="Elbow Curve" width="500"/>
 
-## Results
+## Results and Conclusion
 
 VINCE WILL PUT SOMETHING TOGETHER
 
@@ -90,4 +93,4 @@ LINK WILL BE ADDED
 
 ## Home Page Example
 
-<img src="./Resources/images/home_page_example (1).jpg" alt="Sample Home Page" width="500"/>
+<img src="./static/images/home_page_example (1).jpg" alt="Sample Home Page" width="500"/>
