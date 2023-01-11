@@ -1,6 +1,6 @@
 # RealLeads
 
-<img src="./static/images/headerfor_readm.png" alt="RealLeads HomeWise Header" width="500"/>
+<img src="./Resources/images/headerfor_readm.png" alt="RealLeads HomeWise Header" width="500"/>
 
 ## Overview
 
@@ -51,7 +51,7 @@ Eighty percent of the data is being used to train the model while the remaining 
 
 Predicting the list price:
 
-<img src="./static/images/modelslistprice.png" alt="Prediction Results" width="500"/>
+<img src="./Resources/images/modelslistprice.png" alt="Prediction Results" width="500"/>
 
 List Price Prediction Results:
 
@@ -61,11 +61,12 @@ Predicted Sold Price:
 
 To predict the sold price of the house which we add the original list price to our existing data table to help figure out what the prediction on what the house would be sold for. Because of built in fuctions and retraining on random states we decided to stick with Random Forest Regressor. Model accuracy: 86%
 
-<img src="./static/images/ML_Graphs/overall_diff_orig_zipcode.png" alt="Prediction Results by zipcode" width="500"/>
+<img src="./Resources/images/ML_Graphs/overall_diff_orig_zipcode.png" alt="Prediction Results by zipcode" width="500"/>
 
 Predicting the Days On Market:
 
-<img src="./static/images/modelsdaysonmarket.png" alt="Day on Market Prediction Results" width="500"/>
+<img src="./Resources/images/modelsdaysonmarket.png" alt="Day on Market Prediction Results" width="500"/>
+
 
 We decided to use Balanced Random Forest Regressor with 70% model accuracy and used 2 buckets as "Less Than 2 Months" and "More Than 2 Months" to be able to provide an information to seller.
 
@@ -73,9 +74,9 @@ We decided to use Balanced Random Forest Regressor with 70% model accuracy and u
 
 This step was an optional steps for RealLeads team, but we wanted to see if we can find any correlation with the data points, we have by clustering data points using unsupervised learning. We used a different data table compared to the supervised machine learning model where we included majority of columns of data to see if there are any findings within the data. Once the data was cleaned, we began to use a method called the Principal Component Analysis(PCA) which performs a dimensionality reduction on our data table and normalize it.
 
-<img src="./static/images/Kmean.png" alt="Clusters" width="500"/>
+<img src="./Resources/images/Kmean.png" alt="Clusters" width="500"/>
 
-<img src="./static/images/elbow_curve.png" alt="Elbow Curve" width="500"/>
+<img src="./Resources/images/elbow_curve.png" alt="Elbow Curve" width="500"/>
 
 ## Results and Conclusion
 
@@ -93,4 +94,5 @@ LINK WILL BE ADDED
 
 ## Home Page Example
 
-<img src="./static/images/home_page_example (1).jpg" alt="Sample Home Page" width="500"/>
+<img src="./Resources/images/home_page_final.jpg" alt="Sample Home Page" width="500"/>
+
