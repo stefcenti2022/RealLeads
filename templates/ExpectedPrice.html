@@ -34,11 +34,13 @@
   />
   <!-- d3 JavaScript -->
   <script src="https://d3js.org/d3.v5.min.js"></script>
+
   <script src="/static/js/localData.js"></script>
   <!-- Our CSS -->
   <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
 </head>
 {% include 'header.html' %}
+
 <body>
   <div class="main">
     <div class="control-panel">
@@ -49,7 +51,9 @@
         <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
       </button>
       <button class="nav-button">
+
         <a class="nav-link active" href="{{ url_for('YourHome') }}">My Home</a>
+
       </button>
       <button class="nav-button">
         <a class="nav-link active" href="{{ url_for('MyListPrice') }}">My List Price</a>  
@@ -68,8 +72,10 @@
       </button>
 
 
+
       <button class="nav-button">
         <a class="nav-link active" href="{{ url_for('FindMap', mls_number = 'DENC518086') }}">Find Map</a>
+
        
       </button>
 
@@ -109,6 +115,7 @@
                    id="inputMLS"
                    placeholder="MLS Number">
             <br>
+
             <button class="formbutton" onclick="display_arrayExpectedPrice();">
                   Click to Receive data
             </button>
@@ -119,6 +126,7 @@
                 <dt>Expected Sold Price</dt>
                   <dd><div class= text id="expectedListPrice"></div></dd>
             </div>
+
           </div>
         </div>
         <br>
@@ -133,6 +141,7 @@
             width:300px;
             text-align: left;
           }
+
          
         </style>
       <h1 class="title1">
@@ -144,6 +153,7 @@
           EXPECTED SOLD PRICE is impacted by the physical characteristics of your home, for example, square footage, number of bedrooms etc. HomeWise's expected sold price can help you better understand the current market value of your home.
         </p>
       </h1>
+
       </div>
       
   </div> 

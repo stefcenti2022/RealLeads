@@ -47,7 +47,9 @@
     <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
   </head>
   <body>
+
     {% include 'header.html' %}
+
     <div class="main">
       <div class="control-panel">
         <div class="controlmenu">
@@ -57,7 +59,9 @@
           <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
         </button>
         <button class="nav-button">
+
           <a class="nav-link active" href="{{ url_for('YourHome') }}">My Home</a>
+
         </button>
         <button class="nav-button">
           <a class="nav-link active" href="{{ url_for('MyListPrice') }}">My List Price</a>  
@@ -75,6 +79,7 @@
          
         </button>
 
+
         <button class="nav-button">
           <a class="nav-link active" href="{{ url_for('FindMap', mls_number = 'DENC518086') }}"
             >Find Map</a
@@ -91,6 +96,7 @@
         </h1>
         
       </div>
+
   </body>
   {% include 'footer.html' %}
 </html>

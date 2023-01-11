@@ -45,17 +45,20 @@ footer {
   position: relative;
   overflow: hidden;
   width: 100%;
+
   height: 200px;
   background-color: rgb(0, 81, 124);
   color:white;
   padding-top: 10px;
 }
 .headerlogo {
+
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 30%;
  
+
 }
 .display-4 {
   position: relative;
@@ -74,7 +77,9 @@ footer {
   padding-left: 0px;
   width: 175px;
   height:auto;
+
   background-color: rgb(0, 81, 124) ;
+
 }
 .controlmenu {
   color: white;
@@ -114,17 +119,21 @@ footer {
   color:white;
 }
 .title{
+
         text-align: center;
         color: black;
         padding-top: 15%;
         padding-right: 5%;
         padding-left: 5%;
+
 }
 
 .form{
   padding:15px;
   float:center;
+
   background-color: rgb(0, 81, 124);
+
   color: white;
   height: auto;
 }
@@ -133,7 +142,9 @@ input, label {
 }
 
 .form-group {
+
   background-color:  rgb(0, 81, 124);
+
   margin: 30px auto;
   width: 75%;
 }
@@ -211,6 +222,7 @@ input, label {
 
 footer {
 position: absolute;
+
 height: 100px;
 width: 100%;
 background-color:  rgb(0, 81, 124);
@@ -225,3 +237,4 @@ text-align: center;
 .text{
   color: black;
 }
+

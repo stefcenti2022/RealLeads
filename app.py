@@ -88,6 +88,7 @@ def MyListPrice():
 
 @app.route("/ExpectedPrice")
 def ExpectedPrice():
+
    # This route tests calling a method in a python module to retrive data
    # to be embeded/rendered.
    return render_template("ExpectedPrice.html")

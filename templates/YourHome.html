@@ -13,6 +13,7 @@
 ----------------------------------------------------------------------->
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -143,10 +144,12 @@
         <style>
           dd {
             border: 1px solid;
+
             text-align: right;
             background-color: white;
             width: 200px;
           }
+
           dt {
             text-align: left;
           }
@@ -166,15 +169,19 @@
           }
           .r_3 {
             display: inline-block;
+
             vertical-align: top;
             padding: 1rem 1rem;
           }
         </style>
+
         <div class="results">
+
           <div class="r_1">
             <h3 class="title">Last Sales Data</h3>
             <dl class="dl-horizontal">
               <dt>Sold Price</dt>
+
               <dd><div class="text" id="e0"></div></dd>
               <dt>Original Sales Price</dt>
               <dd><div class="text" id="e1"></div></dd>
@@ -184,10 +191,12 @@
               <dd><div class="text" id="e3"></div></dd>
               <dt>Settled Date</dt>
               <dd><div class="text" id="e4"></div></dd>
+
             </dl>
             <h3 class="title">Location Data</h3>
             <dl class="dl-horizontal">
               <dt>County</dt>
+
               <dd><div class="text" id="e5"></div></dd>
               <dt>ML5 Area</dt>
               <dd><div class="text" id="e6"></div></dd>
@@ -197,12 +206,14 @@
               <dd><div class="text" id="e7"></div></dd>
               <dt>School District</dt>
               <dd><div class="text" id="e8"></div></dd>
+
             </dl>
           </div>
           <div class="r_2">
             <h3 class="title">Property Characteristics</h3>
             <dl class="dl-horizontal">
               <dt>Acres</dt>
+
               <dd><div class="text" id="e9"></div></dd>
               <dt>Ownership</dt>
               <dd><div class="text" id="e10"></div></dd>
@@ -272,3 +283,4 @@
   </body>
   {% include 'footer.html' %}
 </html>
+
