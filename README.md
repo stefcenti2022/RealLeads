@@ -1,78 +1,96 @@
 # RealLeads
 
+<img src="./static/images/headerfor_readm.png" alt="RealLeads HomeWise Header" width="500"/>
+
 ## Overview
 
-The real estate industry has a significant impact on the American economy. There are several indicators that affect real estate sales such as location, property characteristics and the economy including the job market, economic cycle and interest rates etc. These indicators help us the determine current approximate value of the property.
+The real estate industry has a significant impact on the American economy. There are several indicators that affect real estate sales such as location, property characteristics and the economy including the job market, economic cycle and interest rates etc. These indicators help us the determine current approximate value of the property. 
 
-## Goal
-
-Whether you are a buyer, seller, agent or investor, everyone has two big questions:
-
+Whether you are a buyer, seller, agent or investor, everyone has similar questions: 
 - How much can I sell my home for?
-- How fast can my house be sold?
+- How fast can my house be sold?	
 
-In this project we will try to find answers for these questions using the data set below from 2019-2022 in New Castle, DE.
+In this project  we are creating a real-world simulation. While we are trying to find an answer for these questions.
+We have established a hypothetical company called REALLEADS which is a real estate focused fintech company that works as a matchmaker between agents and home sellers. RealLeads has been in business for about five years. Their initial product was the “RealLeads Agent Console”, a portal that serves up home seller leads and also acts as a CRM (Customer Relationship Management) database for agents.
+
+Now that RealLeads has been in business successfully for five years, investors want to see product expansion and increased revenue. Our RealLeads data and product development team has been tasked with coming up with a new idea that can be monetized.
+Our team, RealLeads proposes creating a new portal, this time targeted at retail clients themselves. . The portal,  “RealLeads Homewise”, will help home sellers get a sense of at what price they might list their home for, what to expect for a sold price, and also get a sense of the number of days a home can be expected to stay on the market.
+
+The tool will capture user data which can be monetized by RealLeads, and there is also a click to call/email feature that puts the Seller/user in touch with an agent who pays for the lead, and provides an additional revenue source for RealLeads.
 
 ## Description of Data Source
 
-We will be using:
-
-- Multi Listing Service Data (MLS)
+We used:
+- Multi Listing Service Data (MLS) (2019-2022)
 - Public Record (PD)
 - Mortgage Data (MD)
 - Census Data (CD)
-- APIs
+- APIs – Google Maps
 
-## Architecture
+ETL Processes:
+- Selection/cleansing
+- PostgresSQL Database
+- Tables use MLSNumber as primary key
+- Connections using psycopg2
 
-<img src="./static/images/architecture.png" alt="RealLeads Architecture Diagram" width="500"/>
+## Tools Used
 
-## Software Used
+Languages:
+Python, JavaScript, PostgreSQL
+
+Software:
+VS Code, JupyterNotebook, Pandas, Numpy, Scikit-Learn, psycopg2, Flask, pgAdmin4, HTML, CSS, Matplotlib, Plotly, Pickle, Figma
 
 ## Machine Learning Model
 
 ### Supervised
 
-##### What would be the optimal sales price?
+We start predicting the listing price first and followed with sold price and the date range, because each machine learning builds off of each other that requires the previous model’s information.
 
-The first stage of the data preprocessing involves merging multiple tables to create a machine learning ready data table. Each merge tage involves further data cleaning such as column dropping and disposing any rows that have NaN value.
+Eighty percent of the data is being used to train the model while the remaining twenty percent is used to test the model. Once that is done we begin testing on multiple models. 
 
-Once the data is cleaned and have no NaN values, we begin on scaling the data using the StandardScaler() method to alleviate data that are spread out and scales it tighter.
+Predicting the list price:
 
-The data is split using the train_test_split method. The data is split in a 80/20 form where 80 percent of the data is being fitted to a machine learning model and the 20 percent will be use to test the machine learning model.
+<img src="./static/images/modelslistprice.png" alt="Prediction Results" width="500"/>
 
-The model that we will be using to predict list and sold price of a house is a random forest regressor model which is a regression model. This model has benefits such as retraining on random states to find the best tree to use and also has built in functions 
-that helps find out what features have the strongest weight when determine the target variable.
+List Price Prediction Results:
 
-##### How fast can my house be sold?
+RandomForestRegressor model is being the best option, we decided to attempt one more method which is scaling our data with a StandardScaler. StandardScaler is used to reallocate the distribution of values so that the mean is 0 and the Standard Deviation is 1. Model accuracy became 75%
 
-To preprocess data, it was important to look at all data to find what needs to be cleaned and used. Looking at all tables, it was found that the prop_charac, pub_rec, and sales_data tables. We used the .info() method to find the data types and non-null counts for all columns in each table. Using the majority of the columns without any null values, we were able to then determine which features to include. After choosing features, we cleaned the specific features. Any objects were changed into categories, and then each category point was changed into a number, since all data points need to be numeric. 
+Predicted Sold Price:
 
-The features were determined using both market knowledge and non-null values in columns. After running the machine learning model, were able to use feature_importances_ from the BalancedRandomForestClassifier module to see which features were mostly impacting the model results. This provided us with more information to drop unnecessary rows as well as any rows with repeated information.  
+To predict the sold price of the house which we add the original list price to our existing data table to help figure out what the prediction on what the house would be sold for. Because of built in fuctions and retraining on random states we decided to stick with Random Forest Regressor. Model accuracy: 86%
 
-The data was split into training and testing sets using train_test_split(X, y). This splits the data into two sections: 80% fit to the machine learning model and 20% used to test the machine learning model.
+<img src="./static/images/ML_Graphs/overall_diff_orig_zipcode.png" alt="Prediction Results by zipcode" width="500"/>
 
-The best model at this point in the analysis is the Balanced Random Forest Classifier. A classifier model is the type of machine learning model we are using because we are trying to split the data into one of four groups, depending on the range of predicted days on market. This model was able to obtain an accuracy score of 33.8% after dropping some columns and only including 13 columns. 
+Predicting the Days On Market:
 
-### Unsupervised
+<img src="./static/images/modelsdaysonmarket.png" alt="Day on Market Prediction Results" width="500"/>
 
-## Results
+We decided to use Balanced Random Forest Regressor with 70% model accuracy and used 2 buckets as "Less Than 2 Months" and "More Than 2 Months" to be able to provide an information to seller.
+
+### Unsupervised Machine Learning
+
+This step was an optional steps for RealLeads team, but we wanted to see if we can find any correlation with the data points, we have by clustering data points using unsupervised learning. We used a different data table compared to the supervised machine learning model where we included majority of columns of data to see if there are any findings within the data. Once the data was cleaned, we began to use a method called the Principal Component Analysis(PCA) which performs a dimensionality reduction on our data table and normalize it.
+
+<img src="./static/images/Kmean.png" alt="Clusters" width="500"/>
+
+<img src="./static/images/elbow_curve.png" alt="Elbow Curve" width="500"/>
+
+## Results and Conclusion
+
+VINCE WILL PUT SOMETHING TOGETHER
 
 ## Team Members
-
-- Square:
-- Triangle:
-- Circle:
-- X:
+- Square: Stefanie, Deanna
+- Triangle: Adam, Madeline
+- Circle: Hande, Vince
+- X: Hande, Vince
 
 ## Presentation
-[Link to Presentation](https://www.canva.com/design/DAFT70_iCEI/dEdaMSujGwRQv8tqX6JlCQ/view?utm_content=DAFT70_iCEI&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
-## Site Map
-
-<img src="./static/images/site_map.png" alt="Site Map Diagram" width="500"/>
+LINK WILL BE ADDED
 
 ## Home Page Example
 
-<img src="./static/images/home_page_example.png" alt="Sample Home Page" width="500"/>
-
+<img src="./static/images/home_page_example (1).jpg" alt="Sample Home Page" width="500"/>

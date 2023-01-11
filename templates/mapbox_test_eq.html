@@ -24,8 +24,14 @@
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 {# Our code to create the map using the Mapbox API #}
+{#
 <script type="text/javascript" src="./static/js/Challenge_logic.js">
-  var graphs = {{map | safe}};
+  //var graphs = {{map | safe}};
+  Plotly.plot("mapid",mapEQ,{});
+</script>
+#}
+<script src="{{ url_for('static', filename='js/Challenge_logic.js') }}" />
+  var graphs = {{mapEQ | safe}}
   Plotly.plot("mapid",graphs,{});
 </script>
 {% endblock %}
