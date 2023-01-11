@@ -34,6 +34,7 @@
   />
   <!-- d3 JavaScript -->
   <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="/static/js/localData.js"></script>
   <!-- Our CSS -->
   <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
 </head>
@@ -114,7 +115,7 @@
                    id="inputMLS"
                    placeholder="MLS Number">
             <br>
-            <button class="formbutton">
+            <button class="formbutton" onclick="display_arrayExpectedPrice();">
                   Click to Receive data
             </button>
 
@@ -122,7 +123,7 @@
               <h3 class="title1">Your Expected Sold Price</h3>
               <dl class="dl-horizontal">
                 <dt>Expected Sold Price</dt>
-                  <dd></dd>
+                  <dd><div class= text id="expectedListPrice"></div></dd>
             </div>
           </div>
         </div>

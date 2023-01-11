@@ -33,6 +33,7 @@
   />
   <!-- d3 JavaScript -->
   <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="/static/js/localData.js"></script>
   <!-- Our CSS -->
   <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
 </head>
@@ -113,15 +114,17 @@
                    id="inputMLS"
                    placeholder="MLS Number">
             <br>
-            <button class="formbutton">
+
+            <button class="formbutton" onclick="display_arrayListPrice();">
                   Click to Receive data
             </button>
+            
 
             <div class="results"> 
               <h3 class="title1">Get My Suggested List Price</h3>
               <dl class="dl-horizontal">
                 <dt>List Price</dt>
-                  <dd></dd>
+                  <dd><div class= text id="Result"></div></dd>
           </div>
           </div>
         </div>

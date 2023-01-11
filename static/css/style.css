@@ -211,8 +211,6 @@ input, label {
 
 footer {
 position: absolute;
-left: 0px;
-bottom: 0px;
 height: 100px;
 width: 100%;
 background-color:  rgb(0, 81, 124);
@@ -223,4 +221,7 @@ text-align: center;
   color: black;
   padding-right: 5%;
   padding-left: 5%;
+}
+.text{
+  color: black;
 }

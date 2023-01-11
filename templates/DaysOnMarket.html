@@ -21,6 +21,7 @@
   />
   <!-- d3 JavaScript -->
   <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="/static/js/localData.js"></script>
   <!-- Our CSS -->
   <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
 </head>
@@ -102,9 +103,16 @@
                    id="inputMLS"
                    placeholder="MLS Number">
             <br>
-            <button class="formbutton">
+            <button class="formbutton"onclick="display_arrayDaysOnMarket();">
                   Click to Receive data
             </button>
+
+            <div class="results"> 
+              <h3 class="title1">Get My Expected Days On Market</h3>
+              <dl class="dl-horizontal">
+                <dt>Expected Sold Price</dt>
+                  <dd><div class= text id="Result"></div></dd>
+          </div>
           </div>
         </div>
         <br>
@@ -125,21 +133,17 @@
           }
          
         </style>
-        <div class="results"> 
-            <h3 class="title">Get My Expected Days On Market</h3>
-            <dl class="dl-horizontal">
-              <dt>Expected Sold Price</dt>
-                <dd></dd>
-        </div>
 
-      <div class="Description">
-            <p>
-                <h2 class="title">YOUR EXPECTED DAYS ON MARKET is the time you can expect your house to sell measured in number of days, that is, before it goes under contract.
-                    Some houses may sell as quickly as three days or less, while others may take millions of years.
-                </h2>
-            </p>
+        <h1 class="title1">
+          <p>
+            DAYS ON MARKET is a measure of how long it takes for a home to sell after it has been put on the market, that is, before it goes under contract. Some homes may sell as quickly as three days or less, while others may take a little longer.
+          </p>
+          <br>
+          <p>
+            HomeWise's EXPECTED DAYS ON MARKET TOOL can help you to understand the market better and prepare you for your next step!
+          </p>
+        </h1>
         </div>
-      </div>
       
   </div> 
 </body>

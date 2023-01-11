@@ -24,17 +24,7 @@
   <!-- Our CSS -->
   <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
 </head>
-<header>
-  <div class="jumbotron1">
-    <div class="content1">
-      <h1 class="display-4">HOMEWISE - Days On Market
-        <img class="headerlogo" src="/static/images/logo.png" alt="My Image" />
-      </h1>
-      <h6 class="display-4" style="text-align:center">powered by RealLeads</h6>
-    </div>
-  </div>
-</header>
-  
+{% include 'header.html' %}
 <body>
   <div class="main">
     <div class="control-panel">
@@ -45,7 +35,7 @@
         <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
       </button>
       <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('YourHome') }}">Your Home</a>
+        <a class="nav-link active" href="{{ url_for('YourHome') }}">My Home</a>
       </button>
       <button class="nav-button">
         <a class="nav-link active" href="{{ url_for('MyListPrice') }}">My List Price</a>  
@@ -122,12 +112,11 @@
           }
          
         </style>
-        
-      <div class="Description">
-            <p>
-                <h2 class="title">AN AGENT is a professional who can help guide you through the entire sales process. They are experts...</h2>
-            </p>
-        </div>
+         <h1 class="title1">
+          <p>
+            AN AGENT is a professional who can help guide you through the entire sales process. When you work with a real estate agent, you'll get selling support at every step of your home selling process. From prepping and listing your home to the marketing that gets buyers in the door.
+          </p>
+        </h1>
       </div>
       
   </div> 
