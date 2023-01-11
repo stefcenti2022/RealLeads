@@ -1,136 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RealLeads</title>
-  <link
-    rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-  />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RealLeads</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
 
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+    <!-- d3 JavaScript -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+  </head>
+  {% include 'header.html' %}
+  <body>
+    <div class="main">
+      <div class="control-panel">
+        <div class="controlmenu">
+          <h3>Menu</h3>
+        </div>
+        <button class="nav-button" onclick="">
+          <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('YourHome') }}"
+            >My Home</a
+          >
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('MyListPrice') }}"
+            >My List Price</a
+          >
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('ExpectedPrice') }}"
+            >My Expected Sold Price</a
+          >
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('DaysOnMarket') }}"
+            >My Expected Days On Market</a
+          >
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('MyAgent') }}"
+            >My Agent</a
+          >
+        </button>
 
-  <!-- Leaflet CSS -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
-    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
-    crossorigin=""
-  />
-  <!-- d3 JavaScript -->
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <!-- Our CSS -->
-  <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
-</head>
-<header>
-  <div class="jumbotron1">
-    <div class="content1">
-      <h1 class="display-4">HOMEWISE - Days On Market
-        <img class="headerlogo" src="/static/images/logo.png" alt="My Image" />
-      </h1>
-      <h6 class="display-4" style="text-align:center">powered by RealLeads</h6>
-    </div>
-  </div>
-</header>
-  
-<body>
-  <div class="main">
-    <div class="control-panel">
-      <div class="controlmenu">
-        <h3>Menu</h3>
+        <button class="nav-button">
+          <a
+            class="nav-link active"
+            href="{{ url_for('FindMap', mls_number = 'DENC518086') }}"
+            >Find Map</a
+          >
+        </button>
       </div>
-      <button class="nav-button" onclick="">
-        <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('YourHome') }}">Your Home</a>
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('MyListPrice') }}">My List Price</a>  
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('ExpectedPrice') }}">My Expected Sold Price</a>
-      
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('DaysOnMarket') }}">My Expected Days On Market</a>
-      
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('MyAgent') }}">My Agent</a>
-       
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('tableau_test', story_id = 1) }}">Tableau</a>
-       
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('mapbox_test') }}">MapBox</a>
-       
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('mapbox_test_eq') }}">MapBox</a>
-       
-      </button>
-
-
-    </div>
       <div class="main-section">
-        <br>
+        <br />
         <div class="form">
           <div class="form-group">
             <h3>Want to talk to an Agent?</h3>
-            <input type="Name" 
-                   class="form-control" 
-                   id="autocomplete" 
-                   placeholder="Name">
-            
-            <input type="email" 
-                   class="form-control" 
-                   id="inputEmail" 
-                   placeholder="Email">
-            
-            <input type="PhoneNumber" 
-                   class="form-control" 
-                   id="PhoneNumber" 
-                   placeholder="Phone Number">
-            
-            <input type="other" 
-                   class="form-control" 
-                   id="inputMessage" 
-                   placeholder="message">
-            
-            <br>
-            <button class="formbutton">
-                Email Me
-            </button>
-            <button class="formbutton">
-                Click to Call 
-            </button>
-            <button class="formbutton">
-                Call Me
-            </button>
+            <input
+              type="Name"
+              class="form-control"
+              id="autocomplete"
+              placeholder="Name"
+            />
+
+            <input
+              type="email"
+              class="form-control"
+              id="inputEmail"
+              placeholder="Email"
+            />
+
+            <input
+              type="PhoneNumber"
+              class="form-control"
+              id="PhoneNumber"
+              placeholder="Phone Number"
+            />
+
+            <input
+              type="other"
+              class="form-control"
+              id="inputMessage"
+              placeholder="message"
+            />
+
+            <br />
+            <button class="formbutton">Email Me</button>
+            <button class="formbutton">Click to Call</button>
+            <button class="formbutton">Call Me</button>
           </div>
         </div>
-        <br>
+        <br />
         <style>
-          .title{
+          .title {
             text-align: left;
             color: white;
           }
-         
         </style>
-        
-      <div class="Description">
-            <p>
-                <h2 class="title">AN AGENT is a professional who can help guide you through the entire sales process. They are experts...</h2>
-            </p>
-        </div>
+        <h1 class="title1">
+          <p>
+            AN AGENT is a professional who can help guide you through the entire
+            sales process. When you work with a real estate agent, you'll get
+            selling support at every step of your home selling process. From
+            prepping and listing your home to the marketing that gets buyers in
+            the door.
+          </p>
+        </h1>
       </div>
-      
-  </div> 
-</body>
-{% include 'footer.html' %}
- </html>
+    </div>
+  </body>
+  {% include 'footer.html' %}
+</html>
+

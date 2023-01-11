@@ -1,156 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RealLeads</title>
-  <link
-    rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-  />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RealLeads</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
 
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+    <!-- d3 JavaScript -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="/static/js/localData.js"></script>
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+  </head>
 
-  <!-- Leaflet CSS -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
-    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
-    crossorigin=""
-  />
-  <!-- d3 JavaScript -->
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <!-- Our CSS -->
-  <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
-</head>
-<header>
-  <div class="jumbotron1">
-    <div class="content1">
-      <h1 class="display-4">HOMEWISE - Days On Market
-        <img class="headerlogo" src="/static/images/logo.png" alt="My Image" />
-      </h1>
-      <h6 class="display-4" style="text-align:center">powered by RealLeads</h6>
-    </div>
-  </div>
-</header>
-  
-<body>
-  <div class="main">
-    <div class="control-panel">
-      <div class="controlmenu">
-        <h3>Menu</h3>
+  {% include 'header.html' %}
+  <body>
+    <div class="main">
+      <div class="control-panel">
+        <div class="controlmenu">
+          <h3>Menu</h3>
+        </div>
+        <button class="nav-button" onclick="">
+          <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('YourHome') }}">My Home</a>
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('MyListPrice') }}">My List Price</a>  
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('ExpectedPrice') }}">My Expected Sold Price</a>
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('DaysOnMarket') }}">My Expected Days On Market</a>
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('MyAgent') }}">My Agent</a>
+        </button>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('FindMap', mls_number = 'DENC518086') }}">Find Map</a>
+        </button>
       </div>
-      <button class="nav-button" onclick="">
-        <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('YourHome') }}">Your Home</a>
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('MyListPrice') }}">My List Price</a>  
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('ExpectedPrice') }}">My Expected Sold Price</a>
-      
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('DaysOnMarket') }}">My Expected Days On Market</a>
-      
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('MyAgent') }}">My Agent</a>
-       
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('tableau_test', story_id = 1) }}">Tableau</a>
-       
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('mapbox_test') }}">MapBox</a>
-       
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('mapbox_test_eq') }}">MapBox</a>
-       
-      </button>
+        <div class="main-section">
+          <br>
+          <div class="form">
+            <div class="form-group">
+              <h3>Input Your Address Here</h3>
+              <input type="street" 
+                    class="form-control" 
+                    id="autocomplete" 
+                    placeholder="Street">
+              
+              <input type="city" 
+                    class="form-control" 
+                    id="inputCity" 
+                    placeholder="City">
+              
+              <input type="state" 
+                    class="form-control" 
+                    id="inputState" 
+                    placeholder="State">
+              
+              <input type="zip" 
+                    class="form-control" 
+                    id="inputZip" 
+                    placeholder="Zip">
+              
+              <input type="county" 
+                    class="form-control" 
+                    id="inputCounty" 
+                    placeholder="County">
+              <input type="MLS Number"
+                    class="form-control"
+                    id="inputMLS"
+                    placeholder="MLS Number">
+              <br>
+              <button class="formbutton"onclick="display_arrayDaysOnMarket();">
+                    Click to Receive data
+              </button>
 
-
-    </div>
-      <div class="main-section">
-        <br>
-        <div class="form">
-          <div class="form-group">
-            <h3>Input Your Address Here</h3>
-            <input type="street" 
-                   class="form-control" 
-                   id="autocomplete" 
-                   placeholder="Street">
-            
-            <input type="city" 
-                   class="form-control" 
-                   id="inputCity" 
-                   placeholder="City">
-            
-            <input type="state" 
-                   class="form-control" 
-                   id="inputState" 
-                   placeholder="State">
-            
-            <input type="zip" 
-                   class="form-control" 
-                   id="inputZip" 
-                   placeholder="Zip">
-            
-            <input type="county" 
-                   class="form-control" 
-                   id="inputCounty" 
-                   placeholder="County">
-            <input type="MLS Number"
-                   class="form-control"
-                   id="inputMLS"
-                   placeholder="MLS Number">
-            <br>
-            <button class="formbutton">
-                  Click to Receive data
-            </button>
+              <div class="results"> 
+                <h3 class="title1">Get My Expected Days On Market</h3>
+                <dl class="dl-horizontal">
+                  <dt>Expected Sold Price</dt>
+                    <dd><div class= text id="Result"></div></dd>
+            </div>
+            </div>
           </div>
-        </div>
-        <br>
-        <style>
-          dd{
-            Border: 1px solid;
-            text-align: right;
-            background-color: white;
-            width: 200px;
-          }
-          dt{
-            width:300px;
-            text-align: left;
-          }
-          .title{
-            text-align: left;
-            color: white;
-          }
-         
-        </style>
-        <div class="results"> 
-            <h3 class="title">Get My Expected Days On Market</h3>
-            <dl class="dl-horizontal">
-              <dt>Expected Sold Price</dt>
-                <dd></dd>
-        </div>
+          <br>
+          <style>
+            dd{
+              Border: 1px solid;
+              text-align: right;
+              background-color: white;
+              width: 200px;
+            }
+            dt{
+              width:300px;
+              text-align: left;
+            }
+            .title{
+              text-align: left;
+              color: white;
+            }
+          
+          </style>
 
-      <div class="Description">
+          <h1 class="title1">
             <p>
-                <h2 class="title">YOUR EXPECTED DAYS ON MARKET is the time you can expect your house to sell measured in number of days, that is, before it goes under contract.
-                    Some houses may sell as quickly as three days or less, while others may take millions of years.
-                </h2>
+              DAYS ON MARKET is a measure of how long it takes for a home to sell after it has been put on the market, that is, before it goes under contract. Some homes may sell as quickly as three days or less, while others may take a little longer.
             </p>
-        </div>
-      </div>
-      
-  </div> 
-</body>
-{% include 'footer.html' %}
+            <br>
+            <p>
+              HomeWise's EXPECTED DAYS ON MARKET TOOL can help you to understand the market better and prepare you for your next step!
+            </p>
+          </h1>
+          </div>
+        
+    </div> 
+  </body>
+  {% include 'footer.html' %}
+
  </html>

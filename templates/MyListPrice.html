@@ -33,20 +33,13 @@
   />
   <!-- d3 JavaScript -->
   <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  <script src="/static/js/localData.js"></script>
   <!-- Our CSS -->
   <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
 </head>
-<header>
-  <div class="jumbotron1">
-    <div class="content1">
-      <h1 class="display-4">HOMEWISE - home page
-        <img class="headerlogo" src="/static/images/logo.png" alt="My Image" />
-      </h1>
-      <h6 class="display-4" style="text-align:center">powered by RealLeads</h6>
-    </div>
-  </div>
-</header>
-  
+{% include 'header.html' %}
+
 <body>
   <div class="main">
     <div class="control-panel">
@@ -57,7 +50,9 @@
         <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
       </button>
       <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('YourHome') }}">Your Home</a>
+
+        <a class="nav-link active" href="{{ url_for('YourHome') }}">My Home</a>
+
       </button>
       <button class="nav-button">
         <a class="nav-link active" href="{{ url_for('MyListPrice') }}">My List Price</a>  
@@ -74,16 +69,11 @@
         <a class="nav-link active" href="{{ url_for('MyAgent') }}">My Agent</a>
        
       </button>
+
+
       <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('tableau_test', story_id = 1) }}">Tableau</a>
-       
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('mapbox_test') }}">MapBox</a>
-       
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('mapbox_test_eq') }}">MapBox</a>
+        <a class="nav-link active" href="{{ url_for('FindMap', mls_number = 'DENC518086') }}">Find Map</a>
+
        
       </button>
 
@@ -123,9 +113,20 @@
                    id="inputMLS"
                    placeholder="MLS Number">
             <br>
-            <button class="formbutton">
+
+
+            <button class="formbutton" onclick="display_arrayListPrice();">
                   Click to Receive data
             </button>
+            
+
+            <div class="results"> 
+              <h3 class="title1">Get My Suggested List Price</h3>
+              <dl class="dl-horizontal">
+                <dt>List Price</dt>
+                  <dd><div class= text id="Result"></div></dd>
+          </div>
+
           </div>
         </div>
         <br>
@@ -140,27 +141,23 @@
             width:300px;
             text-align: left;
           }
-          .title{
-            text-align: left;
-            color: white;
-          }
+
+          
+          
          
         </style>
-        <div class="results"> 
-            <h3 class="title">Get My Suggested List Price</h3>
-            <dl class="dl-horizontal">
-              <dt>List Price</dt>
-                <dd></dd>
-        </div>
+        <h1 class="title1">
+          <p>
+            SUGGESTED LIST PRICE tells you how much you should consider listing your house for. Similar to a car or a retail iten, the list price is the initial price that buyers look at first.
+          </p>
+          <br>
+          <p>
+            In the Real Estate Market pricing strategies can affect by many indicators. Homewise's suggested list price would help you for your pricing strategies.
+          </p>
+        </h1>
+        
+        
 
-      <div class="Description">
-            <p>
-                <h2 class="title">YOUR SUGGESTED LIST PRICE tells you how much you should consider listing your house for. 
-                Similar to a car or a retail item, the list price is the initial price that...
-                </h2>
-            </p>
-        </div>
-      </div>
       
   </div> 
 </body>
