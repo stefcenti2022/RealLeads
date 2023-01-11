@@ -67,6 +67,7 @@ Predicting the Days On Market:
 
 <img src="./Resources/images/modelsdaysonmarket.png" alt="Day on Market Prediction Results" width="500"/>
 
+
 We decided to use Balanced Random Forest Regressor with 70% model accuracy and used 2 buckets as "Less Than 2 Months" and "More Than 2 Months" to be able to provide an information to seller.
 
 ### Unsupervised Machine Learning
@@ -94,3 +95,4 @@ LINK WILL BE ADDED
 ## Home Page Example
 
 <img src="./Resources/images/home_page_final.jpg" alt="Sample Home Page" width="500"/>
+
