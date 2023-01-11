@@ -47,15 +47,8 @@
     <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
   </head>
   <body>
-    <div class="jumbotron1">
-      <div class="content1">
-        <h1 class="display-4">HOMEWISE - home page
-          <img class="headerlogo" src="/static/images/logo.png" alt="My Image" />
-        </h1>
-        <h6 class="display-4" style="text-align:center">powered by RealLeads</h6>
-      </div>
-    </div>
-    </div>
+    {% include 'header.html' %}
+
     <div class="main">
       <div class="control-panel">
         <div class="controlmenu">
@@ -65,7 +58,7 @@
           <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
         </button>
         <button class="nav-button">
-          <a class="nav-link active" href="{{ url_for('YourHome') }}">Your Home</a>
+          <a class="nav-link active" href="{{ url_for('YourHome') }}">My Home</a>
         </button>
         <button class="nav-button">
           <a class="nav-link active" href="{{ url_for('MyListPrice') }}">My List Price</a>  
@@ -99,7 +92,11 @@
       </div>
       <div class="main-section">
         <br>
-        <h3 class="title">Welcome to HomeWise powered by RealLeads. This Tool helps home owners like you estimate...</h3>
+        <h1 class="title">
+          <p>
+            Welcome to HomeWise powered by RealLeads. This Tool helps home owners like you estimate the sale price of your home, and provides the expected days on market information to prepare sellers for their home sale experience.
+          </p>
+        </h1>
         
       </div>
 
