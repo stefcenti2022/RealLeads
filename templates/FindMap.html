@@ -1,6 +1,18 @@
+<!---------------------------------------------------------------------
+* 
+* Name: index.html
+*
+* Description: 
+* This page is contains the index to all other pages for the RealLeads
+* Flask application.
+*
+* When a new template is rendered, the body of the index below the
+* section with the buttons for testing each route will replace what
+* is currently rendered in this section of the index page.
+*
+----------------------------------------------------------------------->
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -20,11 +32,13 @@
     />
     <!-- d3 JavaScript -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="/static/js/localData.js"></script>
     <!-- Our CSS -->
     <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
   </head>
-  {% include 'header.html' %}
+
   <body>
+    {% include 'header.html' %}
     <div class="main">
       <div class="control-panel">
         <div class="controlmenu">
@@ -33,26 +47,31 @@
         <button class="nav-button" onclick="">
           <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
         </button>
+
         <button class="nav-button">
           <a class="nav-link active" href="{{ url_for('YourHome') }}"
             >My Home</a
           >
         </button>
+
         <button class="nav-button">
           <a class="nav-link active" href="{{ url_for('MyListPrice') }}"
             >My List Price</a
           >
         </button>
+
         <button class="nav-button">
           <a class="nav-link active" href="{{ url_for('ExpectedPrice') }}"
             >My Expected Sold Price</a
           >
         </button>
+
         <button class="nav-button">
           <a class="nav-link active" href="{{ url_for('DaysOnMarket') }}"
             >My Expected Days On Market</a
           >
         </button>
+
         <button class="nav-button">
           <a class="nav-link active" href="{{ url_for('MyAgent') }}"
             >My Agent</a
@@ -69,62 +88,19 @@
       </div>
       <div class="main-section">
         <br />
-        <div class="form">
-          <div class="form-group">
-            <h3>Want to talk to an Agent?</h3>
-            <input
-              type="Name"
-              class="form-control"
-              id="autocomplete"
-              placeholder="Name"
-            />
 
-            <input
-              type="email"
-              class="form-control"
-              id="inputEmail"
-              placeholder="Email"
-            />
+        <div class="results">
+          <div id="chart" class="chart"></div>
 
-            <input
-              type="PhoneNumber"
-              class="form-control"
-              id="PhoneNumber"
-              placeholder="Phone Number"
-            />
+          <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-            <input
-              type="other"
-              class="form-control"
-              id="inputMessage"
-              placeholder="message"
-            />
-
-            <br />
-            <button class="formbutton">Email Me</button>
-            <button class="formbutton">Click to Call</button>
-            <button class="formbutton">Call Me</button>
-          </div>
+          <script type="text/javascript">
+            var graphs = {{map | safe}};
+            Plotly.plot('chart',graphs,{});
+          </script>
         </div>
-        <br />
-        <style>
-          .title {
-            text-align: left;
-            color: white;
-          }
-        </style>
-        <h1 class="title1">
-          <p>
-            AN AGENT is a professional who can help guide you through the entire
-            sales process. When you work with a real estate agent, you'll get
-            selling support at every step of your home selling process. From
-            prepping and listing your home to the marketing that gets buyers in
-            the door.
-          </p>
-        </h1>
       </div>
     </div>
   </body>
   {% include 'footer.html' %}
 </html>
-

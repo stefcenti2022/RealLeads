@@ -88,26 +88,32 @@ def MyListPrice():
 
 @app.route("/ExpectedPrice")
 def ExpectedPrice():
+
    # This route tests calling a method in a python module to retrive data
    # to be embeded/rendered.
    return render_template("ExpectedPrice.html")
 
+# This route opens the DaysOnMarket page.
 @app.route("/DaysOnMarket")
 def DaysOnMarket():
-   # This route tests calling a method in a python module to retrive data
-   # to be embeded/rendered.
    return render_template("DaysOnMarket.html")
 
+# This route opens the MyAgent page.
 @app.route("/MyAgent")
 def MyAgent():
-   # This route tests calling a method in a python module to retrive data
-   # to be embeded/rendered.
    return render_template("MyAgent.html")
 
+# This route retrieves data from the machine language algorithms to
+# display the map for a given MLS Number.
+@app.route("/FindMap/<mls_number>")
+def FindMap(mls_number):
+   map, header = leads_map.get_map(mls_number)
+   return render_template("FindMap.html", map = map, header = header)
+
+# This route tests retrieving a record from the datbase using search
+# criteria selected from a dropdown menu on the search form.
 @app.route("/db_test/<mls_number>")
 def db_test(mls_number):
-   # This route tests calling a method in a python module to retrive data
-   # to be embeded/rendered.
    id_table_data = IdTable.get_id_table_model(mls_number)
    return render_template("db_test.html", id_table_data=id_table_data)
 

@@ -34,20 +34,13 @@
   />
   <!-- d3 JavaScript -->
   <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  <script src="/static/js/localData.js"></script>
   <!-- Our CSS -->
   <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
 </head>
-<header>
-  <div class="jumbotron1">
-    <div class="content1">
-      <h1 class="display-4">HOMEWISE - Expected Price
-        <img class="headerlogo" src="/static/images/logo.png" alt="My Image" />
-      </h1>
-      <h6 class="display-4" style="text-align:center">powered by RealLeads</h6>
-    </div>
-  </div>
-</header>
-  
+{% include 'header.html' %}
+
 <body>
   <div class="main">
     <div class="control-panel">
@@ -58,7 +51,9 @@
         <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
       </button>
       <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('YourHome') }}">Your Home</a>
+
+        <a class="nav-link active" href="{{ url_for('YourHome') }}">My Home</a>
+
       </button>
       <button class="nav-button">
         <a class="nav-link active" href="{{ url_for('MyListPrice') }}">My List Price</a>  
@@ -75,16 +70,12 @@
         <a class="nav-link active" href="{{ url_for('MyAgent') }}">My Agent</a>
        
       </button>
+
+
+
       <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('tableau_test', story_id = 1) }}">Tableau</a>
-       
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('mapbox_test') }}">MapBox</a>
-       
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('mapbox_test_eq') }}">MapBox</a>
+        <a class="nav-link active" href="{{ url_for('FindMap', mls_number = 'DENC518086') }}">Find Map</a>
+
        
       </button>
 
@@ -124,9 +115,18 @@
                    id="inputMLS"
                    placeholder="MLS Number">
             <br>
-            <button class="formbutton">
+
+            <button class="formbutton" onclick="display_arrayExpectedPrice();">
                   Click to Receive data
             </button>
+
+            <div class="results"> 
+              <h3 class="title1">Your Expected Sold Price</h3>
+              <dl class="dl-horizontal">
+                <dt>Expected Sold Price</dt>
+                  <dd><div class= text id="expectedListPrice"></div></dd>
+            </div>
+
           </div>
         </div>
         <br>
@@ -141,26 +141,19 @@
             width:300px;
             text-align: left;
           }
-          .title{
-            text-align: left;
-            color: white;
-          }
+
          
         </style>
-        <div class="results"> 
-            <h3 class="title">Your Expected Sold Price</h3>
-            <dl class="dl-horizontal">
-              <dt>Expected Sold Price</dt>
-                <dd></dd>
-        </div>
+      <h1 class="title1">
+        <p>
+          YOUR EXPECTED SOLD PRICE is the price you can expect to get for your home. This does not include seller's fees like transfer taxes, closing cost and agent commissions.
+        </p>
+        <br>
+        <p>
+          EXPECTED SOLD PRICE is impacted by the physical characteristics of your home, for example, square footage, number of bedrooms etc. HomeWise's expected sold price can help you better understand the current market value of your home.
+        </p>
+      </h1>
 
-      <div class="Description">
-            <p>
-                <h2 class="title">YOUR EXPECTED SOLD PRICE is the price you can expect to get for your home.
-                  This does not include seller's fees like transfer taxes, agent commissions etc.
-                </h2>
-            </p>
-        </div>
       </div>
       
   </div> 
