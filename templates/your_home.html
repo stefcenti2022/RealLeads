@@ -11,137 +11,138 @@
 *
 ----------------------------------------------------------------------->
 {% extends 'base.html' %} {% block content %}
+<br />
 
-{% include search_form.html %}
+<input type="hidden" name="search_form" />
+
+{% include 'search_form.html' %}
+
 <br />
 <style>
-    dd {
+  dd {
     border: 1px solid;
     text-align: right;
     background-color: white;
     width: 200px;
-    }
-    dt {
+  }
+  dt {
     text-align: left;
-    }
-    .title {
+  }
+  .title {
     text-align: left;
     color: white;
-    }
-    .r_1 {
+  }
+  .r_1 {
     display: inline-block;
     vertical-align: top;
     padding: 1rem 1rem;
-    }
-    .r_2 {
+  }
+  .r_2 {
     display: inline-block;
     vertical-align: top;
     padding: 1rem 1rem;
-    }
-    .r_3 {
+  }
+  .r_3 {
     display: inline-block;
     vertical-align: top;
     padding: 1rem 1rem;
-    }
+  }
 </style>
 <div class="results">
-    <div class="r_1">
+  <div class="r_1">
     <h3 class="title">Last Sales Data</h3>
     <dl class="dl-horizontal">
-        <dt>Sold Price</dt>
-        <dd></dd>
-        <dt>Original Sales Price</dt>
-        <dd></dd>
-        <dt>Current Price</dt>
-        <dd></dd>
-        <dt>DOM</dt>
-        <dd></dd>
-        <dt>Settled Date</dt>
-        <dd></dd>
+      <dt>Sold Price</dt>
+      <dd></dd>
+      <dt>Original Sales Price</dt>
+      <dd></dd>
+      <dt>Current Price</dt>
+      <dd></dd>
+      <dt>DOM</dt>
+      <dd></dd>
+      <dt>Settled Date</dt>
+      <dd></dd>
     </dl>
     <h3 class="title">Location Data</h3>
     <dl class="dl-horizontal">
-        <dt>County</dt>
-        <dd></dd>
-        <dt>ML5 Area</dt>
-        <dd></dd>
-        <dt>Township</dt>
-        <dd></dd>
-        <dt>Subdivision</dt>
-        <dd></dd>
-        <dt>School District</dt>
-        <dd></dd>
+      <dt>County</dt>
+      <dd></dd>
+      <dt>ML5 Area</dt>
+      <dd></dd>
+      <dt>Township</dt>
+      <dd></dd>
+      <dt>Subdivision</dt>
+      <dd></dd>
+      <dt>School District</dt>
+      <dd></dd>
     </dl>
-    </div>
-    <div class="r_2">
+  </div>
+  <div class="r_2">
     <h3 class="title">Property Characteristics</h3>
     <dl class="dl-horizontal">
-        <dt>Acres</dt>
-        <dd></dd>
-        <dt>Ownership</dt>
-        <dd></dd>
-        <dt>Senior Community Y/N</dt>
-        <dd></dd>
-        <dt>Condo/Coop Assoc Y/N</dt>
-        <dd></dd>
-        <dt>HOA Y/N</dt>
-        <dd></dd>
-        <dt>Association Fee</dt>
-        <dd></dd>
-        <dt>Association Fee Frequency</dt>
-        <dd></dd>
-        <dt>Age</dt>
-        <dd></dd>
-        <dt>Interior SqFt</dt>
-        <dd></dd>
-        <dt>Bedrooms</dt>
-        <dd></dd>
-        <dt>Baths</dt>
-        <dd></dd>
-        <dt>Baths Full</dt>
-        <dd></dd>
-        <dt>Partial Baths</dt>
-        <dd></dd>
-        <dt>Garage Spaces</dt>
-        <dd></dd>
+      <dt>Acres</dt>
+      <dd></dd>
+      <dt>Ownership</dt>
+      <dd></dd>
+      <dt>Senior Community Y/N</dt>
+      <dd></dd>
+      <dt>Condo/Coop Assoc Y/N</dt>
+      <dd></dd>
+      <dt>HOA Y/N</dt>
+      <dd></dd>
+      <dt>Association Fee</dt>
+      <dd></dd>
+      <dt>Association Fee Frequency</dt>
+      <dd></dd>
+      <dt>Age</dt>
+      <dd></dd>
+      <dt>Interior SqFt</dt>
+      <dd></dd>
+      <dt>Bedrooms</dt>
+      <dd></dd>
+      <dt>Baths</dt>
+      <dd></dd>
+      <dt>Baths Full</dt>
+      <dd></dd>
+      <dt>Partial Baths</dt>
+      <dd></dd>
+      <dt>Garage Spaces</dt>
+      <dd></dd>
     </dl>
-    </div>
-    <div class="r_3">
+  </div>
+  <div class="r_3">
     <h3 class="title"></h3>
     <br /><br />
     <dl class="dl-horizontal">
-        <dt>Design</dt>
-        <dd></dd>
-        <dt>Style</dt>
-        <dd></dd>
-        <dt>Garage Y/N</dt>
-        <dd></dd>
-        <dt>Flooring</dt>
-        <dd></dd>
-        <dt>Hot Water</dt>
-        <dd></dd>
-        <dt>Water</dt>
-        <dd></dd>
-        <dt>Sewer</dt>
-        <dd></dd>
-        <dt>Basement Y/N</dt>
-        <dd></dd>
-        <dt>Basement Type</dt>
-        <dd></dd>
-        <dt>Exterior Material</dt>
-        <dd></dd>
-        <dt>Main Roof</dt>
-        <dd></dd>
-        <dt>Central Air Y/N</dt>
-        <dd></dd>
-        <dt>Cooling</dt>
-        <dd></dd>
-        <dt>Primary Heat</dt>
-        <dd></dd>
+      <dt>Design</dt>
+      <dd></dd>
+      <dt>Style</dt>
+      <dd></dd>
+      <dt>Garage Y/N</dt>
+      <dd></dd>
+      <dt>Flooring</dt>
+      <dd></dd>
+      <dt>Hot Water</dt>
+      <dd></dd>
+      <dt>Water</dt>
+      <dd></dd>
+      <dt>Sewer</dt>
+      <dd></dd>
+      <dt>Basement Y/N</dt>
+      <dd></dd>
+      <dt>Basement Type</dt>
+      <dd></dd>
+      <dt>Exterior Material</dt>
+      <dd></dd>
+      <dt>Main Roof</dt>
+      <dd></dd>
+      <dt>Central Air Y/N</dt>
+      <dd></dd>
+      <dt>Cooling</dt>
+      <dd></dd>
+      <dt>Primary Heat</dt>
+      <dd></dd>
     </dl>
-    </div>
+  </div>
 </div>
-
-</body>
-  {% include 'footer.html' %}
-</html>
+{% endblock %}

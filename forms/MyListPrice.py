@@ -36,6 +36,6 @@ from ..forms import SearchForm
 
 class MyListPrice(FlaskForm):
 
-    name = HiddenField()
+    name = HiddenField(id="hidden")
 
-    list_price = StringField(label='List Price', render_kw={ 'readonly': True })
+    list_price = StringField(id='list_price', label='List Price', render_kw={ 'readonly': True })

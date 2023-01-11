@@ -111,7 +111,28 @@ class SampleTable:
         results = self.df.loc[self.df[field_name] == value]
 
         results = json.loads(results.to_json(orient='records'))
-        sample = Sample(results[0])
+    
+        if len(results) > 0:
+            print('++++++++ st.1 ++++++++=')
+            sample = Sample(results[0])
+        else:
+            print('++++++++ st.2 ++++++++=')
+            sample = {
+                'MLSNumber': 'DENC518086',
+                'Address': '2615 Pecksniff Rd',
+                'Category': 'RES',
+                'City': 'Wilmingon',
+                'State': 'DE',
+                'Zip_Code': 19808,
+                'County': 'NEWCASTLEDE',
+                'MLSArea': 30903.0,
+                'Subdivision': 'SHERWOOD PARK II',
+                'School_District': 'Red Clay Consolidated',
+                'Schools-Elementary': None,
+                'Schools-Middle': None,
+                'Schools-HighSchool': None
+            }
+        
         return sample
 
     def get_current(self):

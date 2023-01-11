@@ -68,10 +68,10 @@
           <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
         </button>
         <button class="nav-button">
-          <a class="nav-link active" href="{{ url_for('YourHome') }}">Your Home</a>
+          <a class="nav-link active" href="{{ url_for('your_home') }}">Your Home</a>
         </button>
         <button class="nav-button">
-          <a class="nav-link active" href="{{ url_for('MyListPrice', mls_number = 'DENC508522', address = '2302 W 14th St') }}">My List Price</a>  
+          <a class="nav-link active" href="{{ url_for('list_price') }}">My List Price</a>  
         </button>
         <button class="nav-button">
           <a class="nav-link active" href="{{ url_for('ExpectedPrice') }}">My Expected Sold Price</a>
@@ -83,13 +83,7 @@
           <a class="nav-link active" href="{{ url_for('MyAgent') }}">My Agent</a>
         </button>
         <button class="nav-button">
-          <a class="nav-link active" href="{{ url_for('tableau_test', story_id = 1) }}">Tableau</a>
-        </button>
-        <button class="nav-button">
-          <a class="nav-link active" href="{{ url_for('mapbox_test_eq') }}">MapBox</a>
-        </button>
-        <button class="nav-button">
-          <a class="nav-link active" href="{{ url_for('search_test') }}">Search</a>
+          <a class="nav-link active" href="{{ url_for('more_info', mls_number='DENC508522') }}">My Map</a>
         </button>
       </div>
 

@@ -14,7 +14,7 @@
 {% extends 'base.html' %} {% block content %}
 <br>
 
-<input type="hidden" id='list_price'/>
+<input type="hidden" name='list_price'/>
 
 {% include 'search_form.html' %}
 
@@ -38,9 +38,7 @@
 
 <div class="results"> 
     <h3 class="title">Get My Suggested List Price</h3>
-    <dl class="dl-horizontal">
-    <dt>List Price</dt>
-    <dd>{{ content_form.list_price }}</dd>
+    {{ content_form.label }} {{ content_form.list_price }}
 </div>
 
 <div class="Description">
@@ -50,5 +48,7 @@
         </h2>
     </p>
 </div>
+
+<script src="static/js/list_price.js"></script>
 
 {% endblock %}

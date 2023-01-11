@@ -101,14 +101,46 @@ def search():
 # These routes will be used by the control panel to render the corresponding
 # template for the button clicked.
 #----------------------------------------------------------------------
-@app.route("/YourHome")
-def YourHome():
+@app.route("/your_home", methods=['GET', 'POST'])
+def your_home():
    # This route tests calling a method in a python module to retrive data
    # to be embeded/rendered.
-   return render_template("YourHome.html")
+   search_form = sf.SearchForm(request.args)
+   content_form = lp.MyListPrice(request.args, name='list_price')
+   content_form.name = 'your_home'
 
-@app.route("/MyListPrice/<address>")
+   if content_form.validate_on_submit():
+      # If we get here we need to update the data in the contest
+      # based on the selection in the dropdown menu.
+      pass
+   else:
+      print("Error on Receive Data")
+
+   address = search_form.address
+   print("+++++++++++ app.yh: address +++++++++++")
+   vars(address)
+
+   if address:
+      #data = sd.SearchData('search_test', address=args.get('address'))
+      data = samples.read('Address', address)
+      #form.address = data.address
+      print("+++++++++++ app.yh: Sample +++++++++++")
+      print(data)
+      search_form.city.data = data['City']
+      search_form.state.data = data['State']
+      search_form.zipcode.data = data['Zip_Code']
+      search_form.mls_number.data = data['MLSNumber']
+
+   data = samples.read_all('Address')
+   print('+++++++++++++ app.yh: DATA +++++++++++')
+   print(data)
+   search_form.address.choices = data
+
+   return render_template("your_home.html", search_form=search_form, content_form=content_form)
+
+@app.route("/MyListPrice/<address>", methods=['GET', 'POST'])
 def MyListPrice(address):
+   return redirect('/')
    # This route creates a Sample record from the ml_samples data for a give mls_number
    # The predicted original list price is sent to the my_list_price view to populate
    # the List Price field.
@@ -117,29 +149,39 @@ def MyListPrice(address):
 
 # New route for rendering the list price portion in the body below the new search
 # form. This will also test having both WTF Forms on the same page.
-@app.route("/list_price")
+@app.route("/list_price", methods=['GET', 'POST'])
 def list_price():
    # Render code for search form and for My List Price here.
-   search_form = sf.SearchForm()
-   content_form = lp.MyListPrice(name='list_price')
+   search_form = sf.SearchForm(request.args)
+   content_form = lp.MyListPrice(request.args, name='list_price')
+   content_form.name = 'list_price'
 
    if content_form.validate_on_submit():
+      # If we get here we need to update the data in the contest
+      # based on the selection in the dropdown menu.
       pass
+   else:
+      print("Error on Receive Data")
 
-   address = request.form.get('address')
+   address = search_form.address
+   print("+++++++++++ app.0: address +++++++++++")
+   print(address)
+   print(address.data)
+   print(*address)
 
-   args=request.args
    if address:
       #data = sd.SearchData('search_test', address=args.get('address'))
-      data = samples.read('Address', address)
+      data = samples.read('Address', address.data)
       #form.address = data.address
-      search_form.city = data.city
-      search_form.state = data.state
-      search_form.zipcode = data.zip_code
-      search_form.mls_number = data.mls_number
+      print("+++++++++++ app.1: Sample +++++++++++")
+      print(data)
+      search_form.city.data = data['City']
+      search_form.state.data = data['State']
+      search_form.zipcode.data = data['Zip_Code']
+      search_form.mls_number.data = data['MLSNumber']
 
    data = samples.read_all('Address')
-   print('+++++++++++++ DATA +++++++++++')
+   print('+++++++++++++ app.2: DATA +++++++++++')
    print(data)
    search_form.address.choices = data
 
@@ -205,13 +247,13 @@ def search1():
       #data = sd.SearchData('search_test', address=args.get('address'))
       data = samples.read('Address', address)
       #form.address = data.address
-      form.city = data.city
-      form.state = data.state
-      form.zipcode = data.zip_code
-      form.mls_number = data.mls_number
+      data.city = data['City']
+      data.state = data['State']
+      data.zipcode = data['Zip_Code']
+      data.mls_number = data['MLSNumber']
 
    data = samples.read_all('Address')
-   print('+++++++++++++ DATA +++++++++++=')
+   print('+++++++++++++ app.search1 DATA +++++++++++=')
    print(data)
    form.address.choices = data
 
