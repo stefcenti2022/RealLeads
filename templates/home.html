@@ -48,7 +48,6 @@
   </head>
   <body>
     {% include 'header.html' %}
-
     <div class="main">
       <div class="control-panel">
         <div class="controlmenu">
@@ -75,12 +74,12 @@
           <a class="nav-link active" href="{{ url_for('MyAgent') }}">My Agent</a>
          
         </button>
-        
-        <button class="nav-button">
-          <a class="nav-link active" href="{{ url_for('mapbox_test_eq') }}">Find Map</a>
-         
-        </button>
 
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('FindMap', mls_number = 'DENC518086') }}"
+            >Find Map</a
+          >
+        </button>
 
       </div>
       <div class="main-section">
@@ -92,26 +91,6 @@
         </h1>
         
       </div>
-
-
-  <div id="mapid"></div>
-
-    <a
-      class="btn btn-primary btn-lg btn3d"
-      href="{{ url_for('db_test', mls_number = 'DENC518086') }}"
-      role="button"
-    >
-      DB Test
-    </a>
-
-
-    {% block body %}
-
-    <h4>This is the RealLeads Home page.</h4>
-    <!-- This is the div that holds our map -->
-    
-
-    {% endblock %}
   </body>
   {% include 'footer.html' %}
 </html>

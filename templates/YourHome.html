@@ -13,249 +13,262 @@
 ----------------------------------------------------------------------->
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RealLeads</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RealLeads</title>
-  <link
-    rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-  />
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+    <!-- d3 JavaScript -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="/static/js/localData.js"></script>
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+  </head>
 
+  <body>
+    {% include 'header.html' %}
+    <div class="main">
+      <div class="control-panel">
+        <div class="controlmenu">
+          <h3>Menu</h3>
+        </div>
+        <button class="nav-button" onclick="">
+          <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
+        </button>
 
-  <!-- Leaflet CSS -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
-    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
-    crossorigin=""
-  />
-  <!-- d3 JavaScript -->
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <script src="/static/js/localData.js"></script>
-  <!-- Our CSS -->
-  <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
-</head>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('YourHome') }}"
+            >My Home</a
+          >
+        </button>
 
-  
-<body>
-  {% include 'header.html' %}
-  <div class="main">
-    <div class="control-panel">
-      <div class="controlmenu">
-        <h3>Menu</h3>
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('MyListPrice') }}"
+            >My List Price</a
+          >
+        </button>
+
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('ExpectedPrice') }}"
+            >My Expected Sold Price</a
+          >
+        </button>
+
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('DaysOnMarket') }}"
+            >My Expected Days On Market</a
+          >
+        </button>
+
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('MyAgent') }}"
+            >My Agent</a
+          >
+        </button>
+
+        <button class="nav-button">
+          <a
+            class="nav-link active"
+            href="{{ url_for('FindMap', mls_number = 'DENC518086') }}"
+            >Find Map</a
+          >
+        </button>
       </div>
-      <button class="nav-button" onclick="">
-        <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('YourHome') }}">My Home</a>
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('MyListPrice') }}">My List Price</a>  
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('ExpectedPrice') }}">My Expected Sold Price</a>
-      
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('DaysOnMarket') }}">My Expected Days On Market</a>
-      
-      </button>
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('MyAgent') }}">My Agent</a>
-       
-      </button>
-
- 
-      <button class="nav-button">
-        <a class="nav-link active" href="{{ url_for('mapbox_test_eq') }}">MapBox</a>
-       
-      </button>
-
-
-    </div>
       <div class="main-section">
-        <br>
+        <br />
         <div class="form">
           <div class="form-group">
             <h3>Input Your Address Here</h3>
-            <input type="street" 
-                   class="form-control" 
-                   id="autocomplete" 
-                   placeholder="Street">
-            
-            <input type="city" 
-                   class="form-control" 
-                   id="inputCity" 
-                   placeholder="City">
-            
-            <input type="state" 
-                   class="form-control" 
-                   id="inputState" 
-                   placeholder="State">
-            
-            <input type="zip" 
-                   class="form-control" 
-                   id="inputZip" 
-                   placeholder="Zip">
-            
-            <input type="county" 
-                   class="form-control" 
-                   id="inputCounty" 
-                   placeholder="County">
-            <input type="MLS Number"
-                   class="form-control"
-                   id="inputMLS"
-                   placeholder="MLS Number">
-            <br>
+            <input
+              type="street"
+              class="form-control"
+              id="autocomplete"
+              placeholder="Street"
+            />
 
-            <script>
-              
-            </script>
+            <input
+              type="city"
+              class="form-control"
+              id="inputCity"
+              placeholder="City"
+            />
+
+            <input
+              type="state"
+              class="form-control"
+              id="inputState"
+              placeholder="State"
+            />
+
+            <input
+              type="zip"
+              class="form-control"
+              id="inputZip"
+              placeholder="Zip"
+            />
+
+            <input
+              type="county"
+              class="form-control"
+              id="inputCounty"
+              placeholder="County"
+            />
+            <input
+              type="MLS Number"
+              class="form-control"
+              id="inputMLS"
+              placeholder="MLS Number"
+            />
+            <br />
+
+            <script></script>
             <button class="formbutton" onclick="display_arrayYourHome();">
-                  Click to Receive data
+              Click to Receive data
             </button>
           </div>
         </div>
-        <br>
+        <br />
         <style>
-          dd{
-            Border: 1px solid;
+          dd {
+            border: 1px solid;
             text-align: right;
             background-color: white;
             width: 200px;
           }
-          dt{
+          dt {
             text-align: left;
           }
-          .title{
+          .title {
             text-align: left;
             color: white;
           }
-          .r_1{
-            display:inline-block;
+          .r_1 {
+            display: inline-block;
             vertical-align: top;
             padding: 1rem 1rem;
           }
-          .r_2{
-            display:inline-block;
+          .r_2 {
+            display: inline-block;
             vertical-align: top;
             padding: 1rem 1rem;
           }
-          .r_3{
-            display:inline-block;
+          .r_3 {
+            display: inline-block;
             vertical-align: top;
             padding: 1rem 1rem;
           }
         </style>
-        <div class="results"> 
+        <div class="results">
           <div class="r_1">
             <h3 class="title">Last Sales Data</h3>
             <dl class="dl-horizontal">
               <dt>Sold Price</dt>
-                <dd><div class= text id="e0"></div></dd>
+              <dd><div class="text" id="e0"></div></dd>
               <dt>Original Sales Price</dt>
-                <dd><div class= text id="e1"></div></dd>
+              <dd><div class="text" id="e1"></div></dd>
               <dt>Current Price</dt>
-                <dd><div class= text id="e2"></div></dd>
+              <dd><div class="text" id="e2"></div></dd>
               <dt>DOM</dt>
-                <dd><div class= text id="e3"></div></dd>
+              <dd><div class="text" id="e3"></div></dd>
               <dt>Settled Date</dt>
-                <dd><div class= text id="e4"></div></dd>
+              <dd><div class="text" id="e4"></div></dd>
             </dl>
             <h3 class="title">Location Data</h3>
             <dl class="dl-horizontal">
               <dt>County</dt>
-                <dd><div class= text id="e5"></div></dd>
+              <dd><div class="text" id="e5"></div></dd>
               <dt>ML5 Area</dt>
-                <dd><div class= text id="e6"></div></dd>
+              <dd><div class="text" id="e6"></div></dd>
               <dt>Township</dt>
-                <dd><div class= text id="e40"></div></dd>
+              <dd><div class="text" id="e40"></div></dd>
               <dt>Subdivision</dt>
-                <dd><div class= text id="e7"></div></dd>
+              <dd><div class="text" id="e7"></div></dd>
               <dt>School District</dt>
-                <dd><div class= text id="e8"></div></dd>
+              <dd><div class="text" id="e8"></div></dd>
             </dl>
           </div>
           <div class="r_2">
             <h3 class="title">Property Characteristics</h3>
             <dl class="dl-horizontal">
               <dt>Acres</dt>
-                <dd><div class= text id="e9"></div></dd>
+              <dd><div class="text" id="e9"></div></dd>
               <dt>Ownership</dt>
-                <dd><div class= text id="e10"></div></dd>
+              <dd><div class="text" id="e10"></div></dd>
               <dt>Senior Community Y/N</dt>
-                <dd><div class= text id="e11"></div></dd>
+              <dd><div class="text" id="e11"></div></dd>
               <dt>Condo/Coop Assoc Y/N</dt>
-                <dd><div class= text id="e12"></div></dd>
+              <dd><div class="text" id="e12"></div></dd>
               <dt>HOA Y/N</dt>
-                <dd><div class= text id="e13"></div></dd>
+              <dd><div class="text" id="e13"></div></dd>
               <dt>Association Fee</dt>
-                <dd><div class= text id="e14"></div></dd>
+              <dd><div class="text" id="e14"></div></dd>
               <dt>Association Fee Frequency</dt>
-                <dd><div class= text id="e15"></div></dd>
+              <dd><div class="text" id="e15"></div></dd>
               <dt>Age</dt>
-                <dd><div class= text id="e16"></div></dd>
+              <dd><div class="text" id="e16"></div></dd>
               <dt>Interior SqFt</dt>
-                <dd><div class= text id="e17"></div></dd>
+              <dd><div class="text" id="e17"></div></dd>
               <dt>Bedrooms</dt>
-                <dd><div class= text id="e18"></div></dd>
+              <dd><div class="text" id="e18"></div></dd>
               <dt>Baths</dt>
-                <dd><div class= text id="e19"></div></dd>
+              <dd><div class="text" id="e19"></div></dd>
               <dt>Baths Full</dt>
-                <dd><div class= text id="e20"></div></dd>
+              <dd><div class="text" id="e20"></div></dd>
               <dt>Partial Baths</dt>
-                <dd><div class= text id="e21"></div></dd>
+              <dd><div class="text" id="e21"></div></dd>
               <dt>Garage Spaces</dt>
-                <dd><div class= text id="e22"></div></dd>
+              <dd><div class="text" id="e22"></div></dd>
             </dl>
           </div>
           <div class="r_3">
-            <h3 class="title">       </h3>
-            <br><br>
+            <h3 class="title"></h3>
+            <br /><br />
             <dl class="dl-horizontal">
               <dt>Design</dt>
-                <dd><div class= text id="e23"></div></dd>
+              <dd><div class="text" id="e23"></div></dd>
               <dt>Style</dt>
-                <dd><div class= text id="e24"></div></dd>
+              <dd><div class="text" id="e24"></div></dd>
               <dt>Garage Y/N</dt>
-                <dd><div class= text id="e25"></div></dd>
+              <dd><div class="text" id="e25"></div></dd>
               <dt>Flooring</dt>
-                <dd><div class= text id="e26"></div></dd>
+              <dd><div class="text" id="e26"></div></dd>
               <dt>Hot Water</dt>
-                <dd><div class= text id="e27"></div></dd>
+              <dd><div class="text" id="e27"></div></dd>
               <dt>Water</dt>
-                <dd><div class= text id="e28"></div></dd>
+              <dd><div class="text" id="e28"></div></dd>
               <dt>Sewer</dt>
-                <dd><div class= text id="e29"></div></dd>
+              <dd><div class="text" id="e29"></div></dd>
               <dt>Basement Y/N</dt>
-                <dd><div class= text id="e30"></div></dd>
+              <dd><div class="text" id="e30"></div></dd>
               <dt>Basement Type</dt>
-                <dd><div class= text id="e31"></div></dd>
+              <dd><div class="text" id="e31"></div></dd>
               <dt>Exterior Material</dt>
-                <dd><div class= text id="e32"></div></dd>
+              <dd><div class="text" id="e32"></div></dd>
               <dt>Main Roof</dt>
-                <dd><div class= text id="e33"></div></dd>
+              <dd><div class="text" id="e33"></div></dd>
               <dt>Central Air Y/N</dt>
-                <dd><div class= text id="e34"></div></dd>
+              <dd><div class="text" id="e34"></div></dd>
               <dt>Cooling</dt>
-                <dd><div class= text id="e35"></div></dd>
+              <dd><div class="text" id="e35"></div></dd>
               <dt>Primary Heat</dt>
-                <dd><div class= text id="e36"></div></dd>
+              <dd><div class="text" id="e36"></div></dd>
             </dl>
           </div>
-          
-
         </div>
-
-        
       </div>
-      
-  </div> 
-</body>
-{% include 'footer.html' %}
-
- </html>
+    </div>
+  </body>
+  {% include 'footer.html' %}
+</html>

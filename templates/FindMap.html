@@ -1,0 +1,106 @@
+<!---------------------------------------------------------------------
+* 
+* Name: index.html
+*
+* Description: 
+* This page is contains the index to all other pages for the RealLeads
+* Flask application.
+*
+* When a new template is rendered, the body of the index below the
+* section with the buttons for testing each route will replace what
+* is currently rendered in this section of the index page.
+*
+----------------------------------------------------------------------->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RealLeads</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+    <!-- d3 JavaScript -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="/static/js/localData.js"></script>
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+  </head>
+
+  <body>
+    {% include 'header.html' %}
+    <div class="main">
+      <div class="control-panel">
+        <div class="controlmenu">
+          <h3>Menu</h3>
+        </div>
+        <button class="nav-button" onclick="">
+          <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
+        </button>
+
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('YourHome') }}"
+            >My Home</a
+          >
+        </button>
+
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('MyListPrice') }}"
+            >My List Price</a
+          >
+        </button>
+
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('ExpectedPrice') }}"
+            >My Expected Sold Price</a
+          >
+        </button>
+
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('DaysOnMarket') }}"
+            >My Expected Days On Market</a
+          >
+        </button>
+
+        <button class="nav-button">
+          <a class="nav-link active" href="{{ url_for('MyAgent') }}"
+            >My Agent</a
+          >
+        </button>
+
+        <button class="nav-button">
+          <a
+            class="nav-link active"
+            href="{{ url_for('FindMap', mls_number = 'DENC518086') }}"
+            >Find Map</a
+          >
+        </button>
+      </div>
+      <div class="main-section">
+        <br />
+
+        <div class="results">
+          <div id="chart" class="chart"></div>
+
+          <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+          <script type="text/javascript">
+            var graphs = {{map | safe}};
+            Plotly.plot('chart',graphs,{});
+          </script>
+        </div>
+      </div>
+    </div>
+  </body>
+  {% include 'footer.html' %}
+</html>
