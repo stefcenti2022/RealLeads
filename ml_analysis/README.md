@@ -34,7 +34,7 @@ The next model we tested was RidgeRegression. This was done to determine if we c
 ​
 ​
 Unlike the RandomForestRegressor, the Ridge model performed poorly with an accuracy of 54% and a mean absolute error of 54000.
-​
+
 ### Linear Regression
 ​
 We then tried Linear Regression, which is a standard model that is commonly used to perform a basic prediction but after training it on the model, it performed better than the Ridge model but not as well as the RandomForest model.
@@ -89,7 +89,7 @@ We used the RandomForestRegressor again to predict the sold price  because of ho
 The model had an accuracy of 86% and a mean absolute error of 25000.
 
 <img src="./ML_Graphs/sold_values.png" alt="SoldValues" width="500"/>
-​
+
 ## Machine Learning Stage 4 (Days On Market)
 ​
 The next step in the analysis was to predict the days on market for the house sale. After attempting to find the days on market as a value, the accuracy was too low with the given data, so we decided to bucket days on market data. With trial and error, we found that bucketing into two groups, less than/more than 2 months provided an accurate prediction. We split the data into training data and testing data with an 80/20 split, and began testing on multiple classification models. Balanced Random Forest Classifier after dropping columns was the model that provided the most accuracy.
@@ -97,7 +97,7 @@ The next step in the analysis was to predict the days on market for the house sa
 The best model, BalancedRandomForestRegressor, had an accuracy of 72%.
 
 <img src="./ML_Graphs/modelsdaysonmarket.png" alt="Days on Market Prediction Results" width="500"/>
-​
+
 ### Balanced Random Forest Classifier
 ​
 The Balanced Random Forest Classifier model performed with 70% accuracy after dropping unncessary columns. Prior to dropping these columns, the accuracy was 63%.
