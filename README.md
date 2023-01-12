@@ -39,7 +39,7 @@ Languages:
 Python, JavaScript, PostgreSQL
 
 Software:
-VS Code, JupyterNotebook, Pandas, Numpy, Scikit-Learn, psycopg2, Flask, pgAdmin4, HTML, CSS, Matplotlib, Plotly, Pickle, Figma
+VS Code, JupyterNotebook, Pandas, Numpy, Scikit-Learn, psycopg2, Flask, pgAdmin4, HTML, CSS, Matplotlib, Plotly, Pickle, Seaborn, Figma
 
 ## Machine Learning Model
 
@@ -80,7 +80,9 @@ This step was an optional steps for RealLeads team, but we wanted to see if we c
 
 ## Results and Conclusion
 
-VINCE WILL PUT SOMETHING TOGETHER
+In conclusion, we were able to connect MLS and public record data to use in predicting suggested list Price, expected sold price, and expected days on market. We achieved this task by using a microcosm of the United States, New Castle County, Delaware.
+
+In the future, we will enhance user interaction with our three machine learning models. Additionally, we  plan to enhance map and data retrieval to give an improved user expirience. We will also include click to call, email, and text buttons to connect with an agent, and build out and productionalize our prototype. 
 
 ## Team Members
 - Square: Stefanie, Deanna
@@ -90,9 +92,8 @@ VINCE WILL PUT SOMETHING TOGETHER
 
 ## Presentation
 
-LINK WILL BE ADDED
+[Link to Presentation](https://docs.google.com/presentation/d/1-YzIQPatpTEpIFAhW6gHMTvsAfdLA-Fpdy_GGFksvzw/edit#slide=id.g1ceed380762_2_197)
 
 ## Home Page Example
 
 <img src="./Resources/images/home_page_final.jpg" alt="Sample Home Page" width="500"/>
-
