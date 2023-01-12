@@ -19,8 +19,8 @@ function display_arrayExpectedPrice()
 
 function display_arrayDaysOnMarket()
 {
-    e =array1[0][8];
-    document.getElementById("Result").innerHTML = e + " days";
+    e =array1[0][42];
+    document.getElementById("Result").innerHTML = e;
 }
 
 var array = [
