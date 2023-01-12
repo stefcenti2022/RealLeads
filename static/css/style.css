@@ -3,7 +3,7 @@ body,
 #mapid {
   height: 100%;
   width: 100%;
-  background-color:white;
+  background-color: white;
 }
 
 footer {
@@ -48,17 +48,14 @@ footer {
 
   height: 200px;
   background-color: rgb(0, 81, 124);
-  color:white;
+  color: white;
   padding-top: 10px;
 }
 .headerlogo {
-
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 30%;
- 
-
 }
 .display-4 {
   position: relative;
@@ -76,29 +73,28 @@ footer {
   position: relative;
   padding-left: 0px;
   width: 175px;
-  height:auto;
+  height: auto;
 
-  background-color: rgb(0, 81, 124) ;
-
+  background-color: rgb(0, 81, 124);
 }
 .controlmenu {
   color: white;
 }
-.main-section{
+.main-section {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
   position: relative;
-  float:inline-end;
+  float: inline-end;
   vertical-align: top;
   left: 5px;
-  width:150rem;
+  width: 150rem;
   height: 90rem;
-  border: 1px solid #163f63;    
-  background-color: #98cae8; 
+  border: 1px solid #163f63;
+  background-color: #98cae8;
 }
 .nav-button {
-  background-color:rgb(142,110,67);
+  background-color: rgb(142, 110, 67);
   border: none;
   color: white;
   padding: 5px 20px;
@@ -112,38 +108,36 @@ footer {
   height: 70px;
 }
 .nav-button:hover {
-  background-color:rgb(243,159,45);
+  background-color: rgb(243, 159, 45);
   transition: 0.4s;
 }
-.nav-link{
-  color:white;
+.nav-link {
+  color: white;
 }
-.title{
-
-        text-align: center;
-        color: black;
-        padding-top: 15%;
-        padding-right: 5%;
-        padding-left: 5%;
-
+.title {
+  text-align: center;
+  color: black;
+  padding-top: 15%;
+  padding-right: 5%;
+  padding-left: 5%;
 }
 
-.form{
-  padding:15px;
-  float:center;
+.form {
+  padding: 15px;
+  float: center;
 
   background-color: rgb(0, 81, 124);
 
   color: white;
   height: auto;
 }
-input, label {
+input,
+label {
   margin: 5px 5px;
 }
 
 .form-group {
-
-  background-color:  rgb(0, 81, 124);
+  background-color: rgb(0, 81, 124);
 
   margin: 30px auto;
   width: 75%;
@@ -174,7 +168,7 @@ input, label {
 }
 #inputMLS {
   display: inline-block;
-  width:49%;
+  width: 49%;
 }
 #inputStreet {
   width: 100%;
@@ -199,42 +193,53 @@ input, label {
   display: inline-block;
   width: 50.5%;
 }
-.formbutton{
-  background-color: rgb(142,110,67); 
+.formbutton {
+  background-color: rgb(142, 110, 67);
   border: none;
   color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-
+  font-size: 20px;
 }
-.formbutton:hover{
-  background-color:rgb(243,159,45);
+.formbutton:hover {
+  background-color: rgb(243, 159, 45);
   transition: 0.4s;
 }
 
-.Description{
-    padding:10rem 10rem;
-
+.Description {
+  padding: 10rem 10rem;
 }
 
 footer {
-position: absolute;
+  position: absolute;
 
-height: 100px;
-width: 100%;
-background-color:  rgb(0, 81, 124);
-text-align: center;
+  height: 100px;
+  width: 100%;
+  background-color: rgb(0, 81, 124);
+  text-align: center;
 }
-.title1{
+.title1 {
   text-align: left;
   color: black;
   padding-right: 5%;
   padding-left: 5%;
 }
-.text{
+.text {
   color: black;
 }
 
+/*
+#chart .chart {
+  width: 100%;
+  height: 100%;
+}
+
+#map_section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+*/

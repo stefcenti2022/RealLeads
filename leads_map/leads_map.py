@@ -51,7 +51,7 @@ def get_map(mls_number):
 
     fig = px.scatter_mapbox(lat_lng, lat="lat", lon="lng",
                             color_discrete_sequence=["blue"], 
-                            zoom=18, height=600, width=800)
+                            zoom=18)
 
     #fig.update_layout(mapbox_style="open-street-map")
     fig.update_layout(mapbox_style="mapbox://styles/mapbox/satellite-streets-v12")
