@@ -23,13 +23,15 @@ RandomForestRegressor is the first model we used. This model provided the best s
 ​
 <img src="./ML_Graphs/RFR_values.png" alt="RandomForestRegressor" width="500"/>
 ​
+
 This model scored a 76% accuracy with a mean absolute error of 36000. Our goal was to attain a model that was in the range of 75-85% accuracy because this shows that the model is not overfitted to the training data and can handle any new data added into the dataset.
 ​
 ### RidgeRegression
 ​
 The next model we tested was RidgeRegression. This was done to determine if we could get a better score than the 76% given by the RandomForestRegressor.
 
-<img src="./ML_Graphs/Ridge_values.png" alt="RidgeRegresion" width="500"/>​
+<img src="./ML_Graphs/Ridge_values.png" alt="RidgeRegresion" width="500"/>
+​
 ​
 Unlike the RandomForestRegressor, the Ridge model performed poorly with an accuracy of 54% and a mean absolute error of 54000.
 ​
@@ -39,6 +41,7 @@ We then tried Linear Regression, which is a standard model that is commonly used
 ​
 <img src="./ML_Graphs/LR_values.png" alt="LinearRegression" width="500"/>
 
+
 The Linear Regression model performed with 59% accuracy and a mean absolute error of 50000.
 ​
 ### Lasso
@@ -46,18 +49,21 @@ The Linear Regression model performed with 59% accuracy and a mean absolute erro
 Lasso is another type of machine learning model that we used to train the model, but it performed similarly to the Linear Regression Model.
 ​
 <img src="./ML_Graphs/Lasso_values.png" alt="Lasso" width="500"/>
+
 ​
 The Lasso model performed with 59% accuracy and a mean absolute error of 50000.
 ​
 ### Elastic Net
 ​
 <img src="./ML_Graphs/EN_values.png" alt="ElasticNet" width="500"/>
+
 ​
 The Elastic Net model performed with 58% accuracy and a mean absolute error of 51866.
 ​
 ### Bayesian Ridge
 ​
 <img src="./ML_Graphs/BR_values.png" alt="BayesianRidge" width="500"/>
+
 ​
 The Bayesian Ridge model performed with 58% accuracy and a mean absolute error of 50000.
 ​
@@ -67,9 +73,10 @@ With RandomForestRegressor model being the best option, we decided to attempt on
 ​
 We applied the RandomForestRegressor to the scaled data, and resulted with similar scores as the unscaled model. 
 
-Though the scaled model performed marginally close to unscaled model, we decided to use this scaled model for the rest of the predictions to maintain consistency.
-​
 <img src="./ML_Graphs/list_values.png" alt="ListValues" width="500"/>
+
+
+Though the scaled model performed marginally close to unscaled model, we decided to use this scaled model for the rest of the predictions to maintain consistency.
 
 ## Machine Learning Stage 3 (Sold Price)
 ​
@@ -104,7 +111,7 @@ The Easy Ensemble Classifier model performed with 44% accuracy, and only 37% acc
 This step was optional for the RealLeads team, but we were determined to find any correlation with all data points by clustering using unsupervised learning. We used a different data table than the supervised macine learning models in that  we included majority of columns for the unsupervised model. Once the data was cleaned, we used a method called the Principal Component Analysis (PCA), which performs a dimensionality reduction on our data table and normalizes the data points. The PCA had 3 components that it reduced the data to which then was used to determine the amount of clusters that would be optimal using the elbow curve method. The elbow curved method uses the K-Means model and goes through a range of clusters to find which number cluster is the best for the data. In this case, four clusters was the most optimal. 
 ​
 After analyzing the clusters, it was difficult to indicate if there was any correlation with the data. The clusters were close together, but were separated appropiately. After looking at some visualizations to explain the data, we were unable to determine any strong correlations between the data.
-​
+
 ## Results
 ​
 Here are some snippets of the results of all the machine learning model stages:
