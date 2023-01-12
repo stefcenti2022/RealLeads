@@ -97,24 +97,3 @@ In the future, we will enhance user interaction with our three machine learning 
 ## Home Page Example
 
 <img src="./Resources/images/home_page_final.jpg" alt="Sample Home Page" width="500"/>
-=======
-
-<img src="./Resources/images/elbow_curve.png" alt="Elbow Curve" width="500"/>
-
-## Results and Conclusion
-
-VINCE WILL PUT SOMETHING TOGETHER
-
-## Team Members
-- Square: Stefanie, Deanna
-- Triangle: Adam, Madeline
-- Circle: Hande, Vince
-- X: Hande, Vince
-
-## Presentation
-
-LINK WILL BE ADDED
-
-## Home Page Example
-
-<img src="./Resources/images/home_page_final.jpg" alt="Sample Home Page" width="500"/>
