@@ -65,12 +65,12 @@ The Bayesian Ridge model performed with 58% accuracy and a mean absolute error o
 ​
 With RandomForestRegressor model being the best option, we decided to attempt one more method which is scaling our data using the StandardScaler method. StandardScaler is used to scale data to the point where the all numbers are in close range with each other. For example, house prices can be listed as 300,000 dollars, but the number of bedrooms are 3, which indicates a wide range of numerical values, although the data columns are not the same. Scaling tackles this issue by changing all the numbers to very small numbers to keep the data normalized, which improves machine learning model capabilities.
 ​
-We applied the RandomForestRegressor to the scaled data, and resulted with similar scores as the unscaled model.
-​
-<img src="./ML_Graphs/list_values.png" alt="ListValues" width="500"/>
-​
+We applied the RandomForestRegressor to the scaled data, and resulted with similar scores as the unscaled model. 
+
 Though the scaled model performed marginally close to unscaled model, we decided to use this scaled model for the rest of the predictions to maintain consistency.
 ​
+<img src="./ML_Graphs/list_values.png" alt="ListValues" width="500"/>
+
 ## Machine Learning Stage 3 (Sold Price)
 ​
 The next step in the analysis was to predict the sold price of the house. We added the original list price to our existing data table to help determine the prediction for what price the house would be sold for. The reason we did not use the predicted list price, for this case, is because we wanted the model to use the existing data given to provide the best learning experience. Once the model learned from the exising data, in production, a home owner can then predict their listed price. Based on the list price prediction, we will then be able to predict the expected sold price of the house.
@@ -79,17 +79,17 @@ The next step in the analysis was to predict the sold price of the house. We add
 ​
 We used the RandomForestRegressor again to predict the sold price  because of how well it performed on the previous prediction. In addition, the RandomForestRegressor has some useful built in functions that help visualize important correlations between the data. After training the model with our scaled data which included the original list price, it performed remarkably well.
 
-<img src="./ML_Graphs/sold_values.png" alt="SoldValues" width="500"/>
-​
 The model had an accuracy of 86% and a mean absolute error of 25000.
+
+<img src="./ML_Graphs/sold_values.png" alt="SoldValues" width="500"/>
 ​
 ## Machine Learning Stage 4 (Days On Market)
 ​
 The next step in the analysis was to predict the days on market for the house sale. After attempting to find the days on market as a value, the accuracy was too low with the given data, so we decided to bucket days on market data. With trial and error, we found that bucketing into two groups, less than/more than 2 months provided an accurate prediction. We split the data into training data and testing data with an 80/20 split, and began testing on multiple classification models. Balanced Random Forest Classifier after dropping columns was the model that provided the most accuracy.
 
-<img src="./ML_Graphs/modelsdaysonmarket.png" alt="Days on Market Prediction Results" width="500"/>
-
 The best model, BalancedRandomForestRegressor, had an accuracy of 72%.
+
+<img src="./ML_Graphs/modelsdaysonmarket.png" alt="Days on Market Prediction Results" width="500"/>
 ​
 ### Balanced Random Forest Classifier
 ​
@@ -138,10 +138,12 @@ This shows the what features that had the most significant impact on predicting 
 This is a confusion matrix which shows that 72% of thw rows that were predicted as "less than 2 months" are actually "less than 2 months" and 67% of the rows that were predicted as "more than 2 months" are actually "more than 2 months".
 ​
 <img src="./ML_Graphs/3d.png" alt="3dScatter" width="500"/>
+
 ​
 This cluster graph shows all the datapoints in the data table and the appropiate classes they belong to.
 ​
 <img src="./ML_Graphs/scatter.png" alt="2dScatter" width="500"/>
+
 ​
 This shows the sold price of houses, each PCA component and correlation.
 
