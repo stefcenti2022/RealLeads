@@ -21,7 +21,7 @@ Before applying our data to a machine learning model, we first have to split the
 ​
 RandomForestRegressor is the first model we used. This model provided the best score compared to other models. 
 ​
-<img src="./Resources/images/ML_Graphs/RFR_values.png" alt="RandomForestRegressor" width="500"/>
+<img src="./ML_Graphs/RFR_values.png" alt="RandomForestRegressor" width="500"/>
 ​
 This model scored a 76% accuracy with a mean absolute error of 36000. Our goal was to attain a model that was in the range of 75-85% accuracy because this shows that the model is not overfitted to the training data and can handle any new data added into the dataset.
 ​
@@ -29,7 +29,7 @@ This model scored a 76% accuracy with a mean absolute error of 36000. Our goal w
 ​
 The next model we tested was RidgeRegression. This was done to determine if we could get a better score than the 76% given by the RandomForestRegressor.
 
-<img src="./Resources/images/ML_Graphs/Ridge_values.png" alt="RidgeRegresion" width="500"/>​
+<img src="./ML_Graphs/Ridge_values.png" alt="RidgeRegresion" width="500"/>​
 ​
 Unlike the RandomForestRegressor, the Ridge model performed poorly with an accuracy of 54% and a mean absolute error of 54000.
 ​
@@ -37,7 +37,7 @@ Unlike the RandomForestRegressor, the Ridge model performed poorly with an accur
 ​
 We then tried Linear Regression, which is a standard model that is commonly used to perform a basic prediction but after training it on the model, it performed better than the Ridge model but not as well as the RandomForest model.
 ​
-<img src="./Resources/images/ML_Graphs/LR_values.png" alt="LinearRegression" width="500"/>
+<img src="./ML_Graphs/LR_values.png" alt="LinearRegression" width="500"/>
 
 The Linear Regression model performed with 59% accuracy and a mean absolute error of 50000.
 ​
@@ -45,19 +45,19 @@ The Linear Regression model performed with 59% accuracy and a mean absolute erro
 ​
 Lasso is another type of machine learning model that we used to train the model, but it performed similarly to the Linear Regression Model.
 ​
-<img src="./Resources/images/ML_Graphs/Lasso_values.png" alt="Lasso" width="500"/>
+<img src="./ML_Graphs/Lasso_values.png" alt="Lasso" width="500"/>
 ​
 The Lasso model performed with 59% accuracy and a mean absolute error of 50000.
 ​
 ### Elastic Net
 ​
-<img src="./Resources/images/ML_Graphs/EN_values.png" alt="ElasticNet" width="500"/>
+<img src="./ML_Graphs/EN_values.png" alt="ElasticNet" width="500"/>
 ​
 The Elastic Net model performed with 58% accuracy and a mean absolute error of 51866.
 ​
 ### Bayesian Ridge
 ​
-<img src="./Resources/images/ML_Graphs/BR_values.png" alt="BayesianRidge" width="500"/>
+<img src="./ML_Graphs/BR_values.png" alt="BayesianRidge" width="500"/>
 ​
 The Bayesian Ridge model performed with 58% accuracy and a mean absolute error of 50000.
 ​
@@ -67,7 +67,7 @@ With RandomForestRegressor model being the best option, we decided to attempt on
 ​
 We applied the RandomForestRegressor to the scaled data, and resulted with similar scores as the unscaled model.
 ​
-<img src="./Resources/images/ML_Graphs/list_values.png" alt="ListValues" width="500"/>
+<img src="./ML_Graphs/list_values.png" alt="ListValues" width="500"/>
 ​
 Though the scaled model performed marginally close to unscaled model, we decided to use this scaled model for the rest of the predictions to maintain consistency.
 ​
@@ -79,7 +79,7 @@ The next step in the analysis was to predict the sold price of the house. We add
 ​
 We used the RandomForestRegressor again to predict the sold price  because of how well it performed on the previous prediction. In addition, the RandomForestRegressor has some useful built in functions that help visualize important correlations between the data. After training the model with our scaled data which included the original list price, it performed remarkably well.
 
-<img src="./Resources/images/ML_Graphs/sold_values.png" alt="SoldValues" width="500"/>
+<img src="./ML_Graphs/sold_values.png" alt="SoldValues" width="500"/>
 ​
 The model had an accuracy of 86% and a mean absolute error of 25000.
 ​
@@ -87,7 +87,7 @@ The model had an accuracy of 86% and a mean absolute error of 25000.
 ​
 The next step in the analysis was to predict the days on market for the house sale. After attempting to find the days on market as a value, the accuracy was too low with the given data, so we decided to bucket days on market data. With trial and error, we found that bucketing into two groups, less than/more than 2 months provided an accurate prediction. We split the data into training data and testing data with an 80/20 split, and began testing on multiple classification models. Balanced Random Forest Classifier after dropping columns was the model that provided the most accuracy.
 
-<img src="./Resources/images/modelsdaysonmarket.png" alt="Days on Market Prediction Results" width="500"/>
+<img src="./ML_Graphs/modelsdaysonmarket.png" alt="Days on Market Prediction Results" width="500"/>
 
 The best model, BalancedRandomForestRegressor, had an accuracy of 72%.
 ​
@@ -109,39 +109,39 @@ After analyzing the clusters, it was difficult to indicate if there was any corr
 ​
 Here are some snippets of the results of all the machine learning model stages:
 ​
-<img src="./Resources/images/ML_Graphs/list_features.png" alt="FeaturesGraph" width="500"/>
+<img src="./ML_Graphs/list_features.png" alt="FeaturesGraph" width="500"/>
 
-<img src="./Resources/images/ML_Graphs/list_features_DF.png" alt="ListFeatures" width="500"/>
+<img src="./ML_Graphs/list_features_DF.png" alt="ListFeatures" width="500"/>
 ​
 This shows the what features that had the most significant impact on predicting the list price.
 
 This is an overview of the average prices of houses based on zipcode. The table also shows the difference between the original prices of the houses and the predicted prices from the model to show the difference between them.
 ​
-<img src="./Resources/images/ML_Graphs/orig_price_diff_pred_zipcode.png" alt="Original Price by Zipcode" width="500"/>
+<img src="./ML_Graphs/orig_price_diff_pred_zipcode.png" alt="Original Price by Zipcode" width="500"/>
 ​
-<img src="./Resources/images/ML_Graphs/sold_price_diff_pred_zipcode.png" alt="Sold Price by Zipcode" width="500"/>
+<img src="./ML_Graphs/sold_price_diff_pred_zipcode.png" alt="Sold Price by Zipcode" width="500"/>
 
-<img src="./Resources/images/ML_Graphs/overall_diff_orig_zipcode.png" alt="Prediction Results by zipcode" width="500"/>
+<img src="./ML_Graphs/overall_diff_orig_zipcode.png" alt="Prediction Results by zipcode" width="500"/>
 
 The above three graphs show the difference between the original prices and the predicited prices.
 
-<img src="./Resources/images/ML_Graphs/seaborn.png" alt="Seaborn" width="500"/>
+<img src="./ML_Graphs/seaborn.png" alt="Seaborn" width="500"/>
 
 This visualization shows the correlation between features.
 
-<img src="./Resources/images/ML_Graphs/dom_features.png" alt="FeaturesDOM" width="500"/>
+<img src="./ML_Graphs/dom_features.png" alt="FeaturesDOM" width="500"/>
 
 This shows the what features that had the most significant impact on predicting the days on market.
 
-<img src="./Resources/images/ML_Graphs/confusion_matrix.png" alt="ConfusionMatrix" width="500"/>
+<img src="./ML_Graphs/confusion_matrix.png" alt="ConfusionMatrix" width="500"/>
 
 This is a confusion matrix which shows that 72% of thw rows that were predicted as "less than 2 months" are actually "less than 2 months" and 67% of the rows that were predicted as "more than 2 months" are actually "more than 2 months".
 ​
-<img src="./Resources/images/ML_Graphs/3d.png" alt="3dScatter" width="500"/>
+<img src="./ML_Graphs/3d.png" alt="3dScatter" width="500"/>
 ​
 This cluster graph shows all the datapoints in the data table and the appropiate classes they belong to.
 ​
-<img src="./Resources/images/ML_Graphs/scatter.png" alt="2dScatter" width="500"/>
+<img src="./ML_Graphs/scatter.png" alt="2dScatter" width="500"/>
 ​
 This shows the sold price of houses, each PCA component and correlation.
 
