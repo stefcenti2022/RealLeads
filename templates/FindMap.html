@@ -89,15 +89,15 @@
       <div class="main-section">
         <br />
 
-        <div class="results">
-          <div id="chart" class="chart"></div>
+        <div id="map-section">
+          <div id="chart" class="chart">
+            <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-          <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
-          <script type="text/javascript">
-            var graphs = {{map | safe}};
-            Plotly.plot('chart',graphs,{});
-          </script>
+            <script type="text/javascript">
+              var graphs = {{map | safe}};
+              Plotly.plot('chart',graphs,{});
+            </script>
+          </div>
         </div>
       </div>
     </div>
