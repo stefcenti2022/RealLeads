@@ -109,6 +109,7 @@ In the future, we will enhance user interaction with our three machine learning 
 - Create the following Config files:
   - In the leads_map folder add config.py with `mapbox_token` set to your token for mapbox. Without this token the map used in the app will fail to render.
   - In the static/js/folder add confit.js with `API_KEY` set to your Google maps API. This may not be necessary since this route is no longer accessed by the app but the code for the route still exists in GitHub and may fail if this file is not found.
+- Export the env var SECRET_KEY to any random string. This is needed to keep client-side sessions secure. In a future release, this will be set automatically as suggested here: https://stackoverflow.com/questions/34902378/where-do-i-get-secret-key-for-flask. See Sessions documentation for more info. https://flask.palletsprojects.com/en/1.0.x/quickstart/#sessions
 - To start the application use `flask run`
 
 The application is a work in progress so if any issues are found, please feel free to contact our team!
